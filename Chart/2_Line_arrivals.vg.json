@@ -70,7 +70,7 @@
       }
     },
     {
-      "data": { "url": "../Data/arrivals_trend_annual.csv" },
+      "data": { "url": "Data/arrivals_trend_annual.csv" },
       "mark": { "type": "point", "color": "#185FA5", "filled": true, "size": 55 },
       "encoding": {
         "x": {
