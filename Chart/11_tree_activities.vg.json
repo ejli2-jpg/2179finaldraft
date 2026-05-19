@@ -8,7 +8,7 @@
   "data": [
     {
       "name": "tree",
-      "url": "../data/visitor_activities_tree.csv",
+      "url": "Data/visitor_activities_tree.csv",
       "format": { "type": "csv" },
       "transform": [
         {
