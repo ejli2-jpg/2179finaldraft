@@ -9,7 +9,7 @@
     "subtitleColor": "#666"
   },
   "data": {
-    "url": "../Data/domestic_international_nights_state.csv"
+    "url": "Data/domestic_international_nights_state.csv"
   },
   "transform": [
     {
