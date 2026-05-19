@@ -46,7 +46,7 @@
       }
     },
     {
-      "data": { "url": "../Data/spend_by_city.csv" },
+      "data": { "url": "https://raw.githubusercontent.com/ejli2-jpg/2179finaldraft/refs/heads/main/Data/spend_by_city.csv" },
       "mark": { "type": "text", "dy": -18, "fontSize": 11, "fontWeight": "bold", "color": "#333333" },
       "encoding": {
         "longitude": { "field": "longitude", "type": "quantitative" },
