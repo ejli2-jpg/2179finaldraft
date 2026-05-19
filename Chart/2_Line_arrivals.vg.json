@@ -36,7 +36,7 @@
       }
     },
     {
-      "data": { "url": "../Data/arrivals_trend_annual.csv" },
+      "data": { "url": "Data/arrivals_trend_annual.csv" },
       "mark": {
         "type": "area",
         "line": { "color": "#185FA5", "strokeWidth": 2.5 },
