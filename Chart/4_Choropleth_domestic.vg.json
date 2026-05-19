@@ -25,7 +25,7 @@
         {
           "lookup": "properties.STATE_NAME",
           "from": {
-            "data": { "url": "../Data/domestic_by_state.csv" },
+            "data": { "url": "Data/domestic_by_state.csv" },
             "key": "state",
             "fields": ["trips_millions", "spend_billion_aud", "nights_millions"]
           }
