@@ -21,7 +21,7 @@
       "mark": { "type": "geoshape", "fill": "#d6e8d6", "stroke": "#ffffff", "strokeWidth": 1.2 }
     },
     {
-      "data": { "url": "../Data/spend_by_city.csv" },
+      "data": { "url": "https://raw.githubusercontent.com/ejli2-jpg/2179finaldraft/refs/heads/main/Data/spend_by_city.csv" },
       "mark": { "type": "circle", "opacity": 0.82, "stroke": "#ffffff", "strokeWidth": 1.5 },
       "encoding": {
         "longitude": { "field": "longitude", "type": "quantitative" },
