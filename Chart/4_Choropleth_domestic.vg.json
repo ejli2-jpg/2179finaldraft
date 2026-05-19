@@ -18,18 +18,14 @@
   "layer": [
     {
       "data": {
-        "url": "Data/au-states-topo.json",
+        "url": "https://raw.githubusercontent.com/ejli2-jpg/2179finaldraft/refs/heads/main/Data/au-states-topo.json",
         "format": { "type": "topojson", "feature": "states" }
       },
       "transform": [
         {
-          "calculate": "datum.properties.STATE_NAME",
-          "as": "state_name"
-        },
-        {
-          "lookup": "state_name",
+          "lookup": "properties.STATE_NAME",
           "from": {
-            "data": { "url": "Data/domestic_by_state.csv" },
+            "data": { "url": "https://raw.githubusercontent.com/ejli2-jpg/2179finaldraft/refs/heads/main/Data/domestic_by_state.csv" },
             "key": "state",
             "fields": ["trips_millions", "spend_billion_aud", "nights_millions"]
           }
@@ -50,7 +46,7 @@
           }
         },
         "tooltip": [
-          { "field": "state_name", "title": "State / Territory" },
+          { "field": "properties.STATE_NAME", "title": "State / Territory" },
           { "field": "trips_millions", "title": "Overnight trips (millions)", "format": ".1f" },
           { "field": "nights_millions", "title": "Visitor nights (millions)", "format": ".1f" },
           { "field": "spend_billion_aud", "title": "Spend ($B AUD)", "format": ".1f" }
@@ -60,7 +56,11 @@
     {
       "data": {
         "values": [
-          { "lon": 146, "lat": -32, "text": "NSW accounts for 33% of all domestic overnight trips" }
+          {
+            "lon": 146,
+            "lat": -32,
+            "text": "NSW accounts for 33% of all domestic overnight trips"
+          }
         ]
       },
       "mark": {
