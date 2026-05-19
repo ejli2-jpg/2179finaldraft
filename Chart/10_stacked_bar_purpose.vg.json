@@ -7,7 +7,7 @@
   },
   "width": 600,
   "height": 320,
-  "data": { "url": "../Data/expenditure_by_purpose.csv" },
+  "data": { "url": "Data/expenditure_by_purpose.csv" },
   "mark": { "type": "bar", "cornerRadiusTopLeft": 3, "cornerRadiusTopRight": 3 },
   "encoding": {
     "x": {
