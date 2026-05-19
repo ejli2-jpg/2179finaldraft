@@ -7,7 +7,7 @@
   },
   "width": 600,
   "height": 380,
-  "data": { "url": "../Data/intl_visitors_all_countries_v2.csv" },
+  "data": { "url": "Data/intl_visitors_all_countries_v2.csv" },
   "params": [
     {
       "name": "hover",
