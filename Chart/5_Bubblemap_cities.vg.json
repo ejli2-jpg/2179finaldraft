@@ -15,7 +15,7 @@
   "layer": [
     {
       "data": {
-        "url": "Data/au-states-topo.json",
+        "url": "https://raw.githubusercontent.com/ejli2-jpg/2179finaldraft/refs/heads/main/Data/au-states-topo.json",
         "format": { "type": "topojson", "feature": "states" }
       },
       "mark": { "type": "geoshape", "fill": "#d6e8d6", "stroke": "#ffffff", "strokeWidth": 1.2 }
