@@ -7,7 +7,7 @@
   },
   "width": 560,
   "height": 240,
-  "data": { "url": "../data/monthly_arrivals.csv" },
+  "data": { "url": "Data/monthly_arrivals.csv" },
   "mark": { "type": "rect", "cornerRadius": 2 },
   "encoding": {
     "x": {
