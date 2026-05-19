@@ -7,7 +7,7 @@
   },
   "width": 1100,
   "height": 360,
-  "data": { "url": "../data/visitor_activities.csv" },
+  "data": { "url": "Data/visitor_activities.csv" },
   "mark": { "type": "bar", "cornerRadiusEnd": 4 },
   "encoding": {
     "y": {
