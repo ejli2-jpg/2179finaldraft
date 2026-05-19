@@ -7,7 +7,7 @@
   },
   "width": 240,
   "height": 380,
-  "data": { "url": "../data/covid_recovery_countries.csv" },
+  "data": { "url": "Data/covid_recovery_countries.csv" },
   "transform": [
     {
       "fold": ["trips_2019", "trips_2024"],
