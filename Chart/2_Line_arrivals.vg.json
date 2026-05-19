@@ -18,12 +18,15 @@
       },
       "mark": { "type": "rect", "color": "#FCEBEB", "opacity": 0.7 },
       "encoding": {
-        "x": { "field": "start", "type": "quantitative" },
+        "x": { "field": "start", "type": "quantitative", "scale": { "domain": [2012, 2024] } },
         "x2": { "field": "end" }
       }
     },
     {
-      "data": { "url": "Data/arrivals_trend_annual.csv" },
+      "data": {
+        "url": "Data/arrivals_trend_annual.csv",
+        "format": { "type": "csv", "parse": { "year": "number", "visitor_arrivals": "number" } }
+      },
       "mark": {
         "type": "area",
         "line": { "color": "#185FA5", "strokeWidth": 2.5 },
@@ -35,21 +38,21 @@
           "field": "year",
           "type": "quantitative",
           "title": "Year",
-          "axis": { "format": "d", "labelFontSize": 11 },
-          "scale": { "domain": [2012, 2024] }
+          "scale": { "domain": [2012, 2024], "zero": false },
+          "axis": { "format": "d", "labelFontSize": 11, "tickCount": 13 }
         },
         "y": {
           "field": "visitor_arrivals",
           "type": "quantitative",
           "title": "Short-term visitor arrivals",
+          "scale": { "domain": [0, 10000000] },
           "axis": {
             "labelFontSize": 10,
             "format": "~s",
             "grid": true,
             "gridDash": [3, 3],
             "gridColor": "#e0e0e0"
-          },
-          "scale": { "domain": [0, 10000000] }
+          }
         },
         "tooltip": [
           { "field": "year", "title": "Year", "format": "d" },
@@ -58,7 +61,10 @@
       }
     },
     {
-      "data": { "url": "Data/arrivals_trend_annual.csv" },
+      "data": {
+        "url": "Data/arrivals_trend_annual.csv",
+        "format": { "type": "csv", "parse": { "year": "number", "visitor_arrivals": "number" } }
+      },
       "mark": { "type": "point", "color": "#185FA5", "filled": true, "size": 55 },
       "encoding": {
         "x": { "field": "year", "type": "quantitative" },
@@ -68,22 +74,16 @@
     {
       "data": {
         "values": [
-          { "year": 2019, "visitor_arrivals": 9464000, "label": "Peak: 9.4M", "anchor": "end" },
-          { "year": 2021, "visitor_arrivals": 263000,  "label": "▼ 97% collapse", "anchor": "middle" },
-          { "year": 2024, "visitor_arrivals": 8402000, "label": "89% recovered ▲", "anchor": "end" }
+          { "year": 2019, "visitor_arrivals": 9464000, "label": "Peak: 9.4M", "anchor": "start" },
+          { "year": 2021, "visitor_arrivals": 263000,  "label": "▼ 97% collapse", "anchor": "start" },
+          { "year": 2024, "visitor_arrivals": 8402000, "label": "89% recovered ▲", "anchor": "start" }
         ]
       },
-      "mark": {
-        "type": "text",
-        "fontSize": 10,
-        "fontWeight": "bold",
-        "dy": -12
-      },
+      "mark": { "type": "text", "fontSize": 10, "fontWeight": "bold", "dx": 6, "dy": -10 },
       "encoding": {
         "x": { "field": "year", "type": "quantitative" },
         "y": { "field": "visitor_arrivals", "type": "quantitative" },
         "text": { "field": "label" },
-        "align": { "field": "anchor", "type": "nominal" },
         "color": {
           "condition": [
             { "test": "datum.year === 2021", "value": "#A32D2D" },
@@ -94,13 +94,10 @@
       }
     },
     {
-      "data": { "values": [{ "year": 2021, "visitor_arrivals": 5500000, "label": "COVID-19 border restrictions" }] },
-      "mark": {
-        "type": "text",
-        "color": "#A32D2D",
-        "fontSize": 10,
-        "fontStyle": "italic"
+      "data": {
+        "values": [{ "year": 2021, "visitor_arrivals": 5500000, "label": "COVID-19 border restrictions" }]
       },
+      "mark": { "type": "text", "color": "#A32D2D", "fontSize": 10, "fontStyle": "italic", "dx": 6 },
       "encoding": {
         "x": { "field": "year", "type": "quantitative" },
         "y": { "field": "visitor_arrivals", "type": "quantitative" },
