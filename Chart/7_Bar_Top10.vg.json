@@ -11,7 +11,7 @@
   "width": 420,
   "height": 300,
   "data": {
-    "url": "../Data/top10_countries.csv"
+    "url": "Data/top10_countries.csv"
   },
   "layer": [
     {
