@@ -23,7 +23,11 @@
       },
       "transform": [
         {
-          "lookup": "properties.STATE_NAME",
+          "calculate": "datum.properties.STATE_NAME",
+          "as": "state_name"
+        },
+        {
+          "lookup": "state_name",
           "from": {
             "data": { "url": "Data/domestic_by_state.csv" },
             "key": "state",
@@ -46,7 +50,7 @@
           }
         },
         "tooltip": [
-          { "field": "properties.STATE_NAME", "title": "State / Territory" },
+          { "field": "state_name", "title": "State / Territory" },
           { "field": "trips_millions", "title": "Overnight trips (millions)", "format": ".1f" },
           { "field": "nights_millions", "title": "Visitor nights (millions)", "format": ".1f" },
           { "field": "spend_billion_aud", "title": "Spend ($B AUD)", "format": ".1f" }
@@ -56,11 +60,7 @@
     {
       "data": {
         "values": [
-          {
-            "lon": 146,
-            "lat": -32,
-            "text": "NSW accounts for 33% of all domestic overnight trips"
-          }
+          { "lon": 146, "lat": -32, "text": "NSW accounts for 33% of all domestic overnight trips" }
         ]
       },
       "mark": {
