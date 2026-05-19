@@ -15,7 +15,7 @@
   "layer": [
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/ejli2-jpg/2179finaldraft/refs/heads/main/Data/spend_by_city.csv",
+        "url": "https://raw.githubusercontent.com/ejli2-jpg/2179finaldraft/refs/heads/main/Data/au-states-topo.json",
         "format": { "type": "topojson", "feature": "states" }
       },
       "transform": [
