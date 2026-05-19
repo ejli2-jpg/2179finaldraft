@@ -83,7 +83,7 @@
         {
           "lookup": "id",
           "from": {
-            "data": { "url": "../Data/intl_visitors_all_countries_v2.csv" },
+            "data": { "url": "Data/intl_visitors_all_countries_v2.csv" },
             "key": "country_id",
             "fields": ["country", "trips_thousands", "spend_million_aud", "region"]
           }
