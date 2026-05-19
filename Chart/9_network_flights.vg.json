@@ -24,7 +24,7 @@
       }
     },
     {
-      "data": { "url": "../Data/flight_edges.csv" },
+      "data": { "url": "Data/flight_edges.csv" },
       "transform": [
         {
           "lookup": "source",
