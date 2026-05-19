@@ -11,7 +11,7 @@
   "width": 600,
   "height": 280,
   "data": {
-    "url": "../Data/visitor_nights_by_type.csv"
+    "url": "Data/visitor_nights_by_type.csv"
   },
   "mark": {
     "type": "area",
