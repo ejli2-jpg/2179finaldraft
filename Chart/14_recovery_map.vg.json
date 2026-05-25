@@ -22,7 +22,7 @@
         {
           "lookup": "properties.STATE_NAME",
           "from": {
-            "data": { "url": "../Data/state_recovery_pct.csv" },
+            "data": { "url": "Data/state_recovery_pct.csv" },
             "key": "state",
             "fields": ["recovery_pct", "arrivals_2019", "arrivals_2024"]
           }
