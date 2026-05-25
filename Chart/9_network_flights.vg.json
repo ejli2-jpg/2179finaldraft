@@ -5,7 +5,7 @@
     "subtitle": "Node size = visitor volume | Edge thickness = weekly flight frequency | Source: TRA IVS + BITRE",
     "anchor": "start", "fontSize": 15, "subtitleFontSize": 11, "subtitleColor": "#666"
   },
-  "width": 1380,
+  "width": 1300,
   "height": 420,
   "projection": {
     "type": "naturalEarth1"
