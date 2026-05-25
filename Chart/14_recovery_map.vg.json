@@ -28,7 +28,7 @@
   "projection": {
     "type": "naturalEarth1",
     "scale": 148,
-    "translate": [400, 240]
+    "translate": {"expr": "[width / 2, height / 2]"}
   },
   "layer": [
     {
