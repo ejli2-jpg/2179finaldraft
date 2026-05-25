@@ -1,74 +1,110 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "State-by-state international visitor recovery",
-    "subtitle": "2024 arrivals as % of 2019 levels | Source: ABS Overseas Arrivals and Departures",
-    "anchor": "start", "fontSize": 15, "subtitleFontSize": 11, "subtitleColor": "#666"
+    "text": "International visitor arrivals to Australia, 2012–2024",
+    "subtitle": "Short-term visitor arrivals | Source: ABS Overseas Arrivals and Departures",
+    "anchor": "start",
+    "fontSize": 15,
+    "subtitleFontSize": 11,
+    "subtitleColor": "#666"
   },
-  "width": 500,
-  "height": 450,
-  "projection": {
-    "type": "mercator",
-    "center": [133, -28],
-    "scale": 620
-  },
+  "width": 600,
+  "height": 280,
+  "resolve": { "scale": { "x": "shared", "y": "shared" } },
   "layer": [
     {
-      "data": {
-        "url": "https://raw.githubusercontent.com/ejli2-jpg/2179finaldraft/refs/heads/main/Data/au-states-topo.json",
-        "format": { "type": "topojson", "feature": "states" }
-      },
-      "transform": [
-        {
-          "lookup": "properties.STATE_NAME",
-          "from": {
-            "data": { "url": "https://raw.githubusercontent.com/ejli2-jpg/2179finaldraft/refs/heads/main/Data/state_recovery_pct.csv" },
-            "key": "state",
-            "fields": ["recovery_pct", "arrivals_2019", "arrivals_2024"]
-          }
-        }
-      ],
-      "mark": { "type": "geoshape", "stroke": "#ffffff", "strokeWidth": 1.5 },
+      "data": { "values": [{ "start": 2020, "end": 2022 }] },
+      "mark": { "type": "rect", "color": "#FCEBEB", "opacity": 0.7 },
       "encoding": {
-        "color": {
-          "field": "recovery_pct",
+        "x": { "field": "start", "type": "quantitative", "scale": { "domain": [2012, 2024], "zero": false } },
+        "x2": { "field": "end" }
+      }
+    },
+    {
+      "data": {
+        "url": "Data/arrivals_trend_annual.csv",
+        "format": { "type": "csv", "parse": { "year": "number", "visitor_arrivals": "number" } }
+      },
+      "mark": {
+        "type": "area",
+        "line": { "color": "#185FA5", "strokeWidth": 2.5 },
+        "color": "#185FA5",
+        "opacity": 0.12
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
           "type": "quantitative",
-          "title": "% of 2019 arrivals",
-          "scale": {
-            "domain": [75, 115],
-            "range":  ["#E24B4A", "#EF9F27", "#97C459"],
-            "type": "linear"
-          },
-          "legend": {
-            "orient": "bottom-left",
-            "titleFontSize": 11,
+          "title": "Year",
+          "scale": { "domain": [2012, 2024], "zero": false },
+          "axis": { "format": "d", "labelFontSize": 11, "tickCount": 13 }
+        },
+        "y": {
+          "field": "visitor_arrivals",
+          "type": "quantitative",
+          "title": "Short-term visitor arrivals",
+          "scale": { "domain": [0, 10000000] },
+          "axis": {
             "labelFontSize": 10,
-            "gradientLength": 160,
-            "labelExpr": "datum.value + '%'"
+            "format": "~s",
+            "grid": true,
+            "gridDash": [3, 3],
+            "gridColor": "#e0e0e0"
           }
         },
         "tooltip": [
-          { "field": "properties.STATE_NAME", "title": "State / Territory" },
-          { "field": "recovery_pct",   "title": "Recovery (% of 2019)", "format": ".0f" },
-          { "field": "arrivals_2024",  "title": "2024 arrivals",        "format": ",.0f" },
-          { "field": "arrivals_2019",  "title": "2019 arrivals",        "format": ",.0f" }
+          { "field": "year", "title": "Year", "format": "d" },
+          { "field": "visitor_arrivals", "title": "Visitor arrivals", "format": ",.0f" }
         ]
       }
     },
     {
-      "data": { "url": "https://raw.githubusercontent.com/ejli2-jpg/2179finaldraft/refs/heads/main/Data/state_recovery_pct.csv" },
-      "mark": { "type": "text", "fontSize": 11, "fontWeight": "bold", "color": "#333333" },
+      "data": {
+        "url": "Data/arrivals_trend_annual.csv",
+        "format": { "type": "csv", "parse": { "year": "number", "visitor_arrivals": "number" } }
+      },
+      "mark": { "type": "point", "color": "#185FA5", "filled": true, "size": 55 },
       "encoding": {
-        "longitude": { "field": "label_lon", "type": "quantitative" },
-        "latitude":  { "field": "label_lat", "type": "quantitative" },
-        "text": {
-          "field": "recovery_pct",
-          "type": "quantitative",
-          "format": ".0f",
-          "formatType": "number"
+        "x": { "field": "year", "type": "quantitative" },
+        "y": { "field": "visitor_arrivals", "type": "quantitative" }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          { "year": 2019, "visitor_arrivals": 9464000, "label": "Peak: 9.4M", "anchor": "start" },
+          { "year": 2021, "visitor_arrivals": 263000, "label": "▼ 97% collapse", "anchor": "start" },
+          { "year": 2024, "visitor_arrivals": 8402000, "label": "89% recovered ▲", "anchor": "start" }
+        ]
+      },
+      "mark": { "type": "text", "fontSize": 10, "fontWeight": "bold", "dx": 6, "dy": -10 },
+      "encoding": {
+        "x": { "field": "year", "type": "quantitative" },
+        "y": { "field": "visitor_arrivals", "type": "quantitative" },
+        "text": { "field": "label" },
+        "color": {
+          "condition": [
+            { "test": "datum.year === 2021", "value": "#A32D2D" },
+            { "test": "datum.year === 2024", "value": "#2e6b1f" }
+          ],
+          "value": "#185FA5"
         }
+      }
+    },
+    {
+      "data": {
+        "values": [{ "year": 2021, "visitor_arrivals": 5500000, "label": "COVID-19 border restrictions" }]
+      },
+      "mark": { "type": "text", "color": "#A32D2D", "fontSize": 10, "fontStyle": "italic", "dx": 6 },
+      "encoding": {
+        "x": { "field": "year", "type": "quantitative" },
+        "y": { "field": "visitor_arrivals", "type": "quantitative" },
+        "text": { "field": "label" }
       }
     }
   ],
-  "config": { "view": { "stroke": null }, "background": "#f0f7fb" }
+  "config": {
+    "view": { "stroke": null },
+    "axis": { "domain": false, "ticks": false }
+  }
 }
