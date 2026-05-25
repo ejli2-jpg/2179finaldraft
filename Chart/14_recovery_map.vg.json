@@ -1,111 +1,74 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Where do Australia's international visitors come from?",
-    "subtitle": [
-      "Visitor trips (thousands) by country of origin | Source: TRA International Visitor Survey, Dec 2024",
-      "Asia dominates. The top 5 source markets — New Zealand, China, USA, UK, and India — account for 55% of all international visitor trips."
-    ],
-    "anchor": "start",
-    "fontSize": 16,
-    "subtitleFontSize": 11,
-    "subtitleColor": "#666666"
+    "text": "State-by-state international visitor recovery",
+    "subtitle": "2024 arrivals as % of 2019 levels | Source: ABS Overseas Arrivals and Departures",
+    "anchor": "start", "fontSize": 15, "subtitleFontSize": 11, "subtitleColor": "#666"
   },
-  "width": 800,
-  "height": 460,
-  "params": [
-    {
-      "name": "zoom",
-      "bind": "scales",
-      "select": {
-        "type": "interval",
-        "on": "[mousedown, window:mouseup] > window:mousemove!",
-        "translate": "[mousedown, window:mouseup] > window:mousemove!",
-        "zoom": "wheel![event.shiftKey===false]"
-      }
-    }
-  ],
+  "width": 500,
+  "height": 450,
   "projection": {
-    "type": "naturalEarth1",
-    "scale": 148,
-    "translate": {"expr": "[width / 2, height / 2]"}
+    "type": "mercator",
+    "center": [133, -28],
+    "scale": 620
   },
   "layer": [
     {
       "data": {
-        "url": "https://cdn.jsdelivr.net/npm/vega-datasets@2/data/world-110m.json",
-        "format": { "type": "topojson", "feature": "graticule" }
-      },
-      "mark": {
-        "type": "geoshape",
-        "stroke": "#b0c8d8",
-        "strokeWidth": 0.3,
-        "filled": false
-      }
-    },
-    {
-      "data": {
-        "url": "https://cdn.jsdelivr.net/npm/vega-datasets@2/data/world-110m.json",
-        "format": { "type": "topojson", "feature": "countries" }
-      },
-      "mark": {
-        "type": "geoshape",
-        "fill": "#d8e8ef",
-        "stroke": "#ffffff",
-        "strokeWidth": 0.4
-      }
-    },
-    {
-      "data": {
-        "url": "https://cdn.jsdelivr.net/npm/vega-datasets@2/data/world-110m.json",
-        "format": { "type": "topojson", "feature": "countries" }
+        "url": "https://raw.githubusercontent.com/ejli2-jpg/2179finaldraft/refs/heads/main/Data/au-states-topo.json",
+        "format": { "type": "topojson", "feature": "states" }
       },
       "transform": [
         {
-          "lookup": "id",
+          "lookup": "properties.STATE_NAME",
           "from": {
-            "data": { "url": "https://raw.githubusercontent.com/ejli2-jpg/2179finaldraft/refs/heads/main/Data/intl_visitors_all_countries_v2.csv" },
-            "key": "country_id",
-            "fields": ["country", "trips_thousands", "spend_million_aud", "region"]
+            "data": { "url": "https://raw.githubusercontent.com/ejli2-jpg/2179finaldraft/refs/heads/main/Data/state_recovery_pct.csv" },
+            "key": "state",
+            "fields": ["recovery_pct", "arrivals_2019", "arrivals_2024"]
           }
-        },
-        { "filter": "datum.trips_thousands != null" }
+        }
       ],
-      "mark": {
-        "type": "geoshape",
-        "stroke": "#ffffff",
-        "strokeWidth": 0.4
-      },
+      "mark": { "type": "geoshape", "stroke": "#ffffff", "strokeWidth": 1.5 },
       "encoding": {
-        "color": {
-          "field": "trips_thousands",
+        "color": {  
+          "field": "recovery_pct",
           "type": "quantitative",
-          "title": "Visitor trips (thousands)",
+          "title": "% of 2019 arrivals",
           "scale": {
-            "type": "log",
-            "scheme": "tealblues",
-            "domain": [1, 1400]
+            "domain": [75, 115],
+            "range":  ["#E24B4A", "#EF9F27", "#97C459"],
+            "type": "linear"
           },
           "legend": {
             "orient": "bottom-left",
-            "titleFontSize": 12,
-            "titleFontWeight": "bold",
+            "titleFontSize": 11,
             "labelFontSize": 10,
-            "gradientLength": 180,
-            "gradientThickness": 14
+            "gradientLength": 160,
+            "labelExpr": "datum.value + '%'"
           }
         },
         "tooltip": [
-          { "field": "country",           "title": "Country" },
-          { "field": "region",            "title": "Region" },
-          { "field": "trips_thousands",   "title": "Visitor trips (thousands)", "format": ",.0f" },
-          { "field": "spend_million_aud", "title": "Spend in Australia ($M AUD)", "format": ",.0f" }
+          { "field": "properties.STATE_NAME", "title": "State / Territory" },
+          { "field": "recovery_pct",   "title": "Recovery (% of 2019)", "format": ".0f" },
+          { "field": "arrivals_2024",  "title": "2024 arrivals",        "format": ",.0f" },
+          { "field": "arrivals_2019",  "title": "2019 arrivals",        "format": ",.0f" }
         ]
+      }
+    },
+    {
+      "data": { "url": "https://raw.githubusercontent.com/ejli2-jpg/2179finaldraft/refs/heads/main/Data/state_recovery_pct.csv" },
+      "mark": { "type": "text", "fontSize": 11, "fontWeight": "bold", "color": "#333333" },
+      "encoding": {
+        "longitude": { "field": "label_lon", "type": "quantitative" },
+        "latitude":  { "field": "label_lat", "type": "quantitative" },
+        "text": {
+          "field": "recovery_pct",
+          "type": "quantitative",
+          "format": ".0f",
+          "formatType": "number"
+        }
       }
     }
   ],
-  "config": {
-    "view": { "stroke": null },
-    "background": "#dde9f2"
-  }
+  "config": { "view": { "stroke": null }, "background": "#f0f7fb" }
 }
