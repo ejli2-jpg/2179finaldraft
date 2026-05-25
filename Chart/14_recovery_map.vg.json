@@ -1,110 +1,111 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "International visitor arrivals to Australia, 2012–2024",
-    "subtitle": "Short-term visitor arrivals | Source: ABS Overseas Arrivals and Departures",
+    "text": "Where do Australia's international visitors come from?",
+    "subtitle": [
+      "Visitor trips (thousands) by country of origin | Source: TRA International Visitor Survey, Dec 2024",
+      "Asia dominates. The top 5 source markets — New Zealand, China, USA, UK, and India — account for 55% of all international visitor trips."
+    ],
     "anchor": "start",
-    "fontSize": 15,
+    "fontSize": 16,
     "subtitleFontSize": 11,
-    "subtitleColor": "#666"
+    "subtitleColor": "#666666"
   },
-  "width": 600,
-  "height": 280,
-  "resolve": { "scale": { "x": "shared", "y": "shared" } },
+  "width": 800,
+  "height": 460,
+  "params": [
+    {
+      "name": "zoom",
+      "bind": "scales",
+      "select": {
+        "type": "interval",
+        "on": "[mousedown, window:mouseup] > window:mousemove!",
+        "translate": "[mousedown, window:mouseup] > window:mousemove!",
+        "zoom": "wheel![event.shiftKey===false]"
+      }
+    }
+  ],
+  "projection": {
+    "type": "naturalEarth1",
+    "scale": 148,
+    "translate": [400, 240]
+  },
   "layer": [
     {
-      "data": { "values": [{ "start": 2020, "end": 2022 }] },
-      "mark": { "type": "rect", "color": "#FCEBEB", "opacity": 0.7 },
-      "encoding": {
-        "x": { "field": "start", "type": "quantitative", "scale": { "domain": [2012, 2024], "zero": false } },
-        "x2": { "field": "end" }
+      "data": {
+        "url": "https://cdn.jsdelivr.net/npm/vega-datasets@2/data/world-110m.json",
+        "format": { "type": "topojson", "feature": "graticule" }
+      },
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#b0c8d8",
+        "strokeWidth": 0.3,
+        "filled": false
       }
     },
     {
       "data": {
-        "url": "Data/arrivals_trend_annual.csv",
-        "format": { "type": "csv", "parse": { "year": "number", "visitor_arrivals": "number" } }
+        "url": "https://cdn.jsdelivr.net/npm/vega-datasets@2/data/world-110m.json",
+        "format": { "type": "topojson", "feature": "countries" }
       },
       "mark": {
-        "type": "area",
-        "line": { "color": "#185FA5", "strokeWidth": 2.5 },
-        "color": "#185FA5",
-        "opacity": 0.12
+        "type": "geoshape",
+        "fill": "#d8e8ef",
+        "stroke": "#ffffff",
+        "strokeWidth": 0.4
+      }
+    },
+    {
+      "data": {
+        "url": "https://cdn.jsdelivr.net/npm/vega-datasets@2/data/world-110m.json",
+        "format": { "type": "topojson", "feature": "countries" }
+      },
+      "transform": [
+        {
+          "lookup": "id",
+          "from": {
+            "data": { "url": "../Data/intl_visitors_all_countries_v2.csv" },
+            "key": "country_id",
+            "fields": ["country", "trips_thousands", "spend_million_aud", "region"]
+          }
+        },
+        { "filter": "datum.trips_thousands != null" }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#ffffff",
+        "strokeWidth": 0.4
       },
       "encoding": {
-        "x": {
-          "field": "year",
+        "color": {
+          "field": "trips_thousands",
           "type": "quantitative",
-          "title": "Year",
-          "scale": { "domain": [2012, 2024], "zero": false },
-          "axis": { "format": "d", "labelFontSize": 11, "tickCount": 13 }
-        },
-        "y": {
-          "field": "visitor_arrivals",
-          "type": "quantitative",
-          "title": "Short-term visitor arrivals",
-          "scale": { "domain": [0, 10000000] },
-          "axis": {
+          "title": "Visitor trips (thousands)",
+          "scale": {
+            "type": "log",
+            "scheme": "tealblues",
+            "domain": [1, 1400]
+          },
+          "legend": {
+            "orient": "bottom-left",
+            "titleFontSize": 12,
+            "titleFontWeight": "bold",
             "labelFontSize": 10,
-            "format": "~s",
-            "grid": true,
-            "gridDash": [3, 3],
-            "gridColor": "#e0e0e0"
+            "gradientLength": 180,
+            "gradientThickness": 14
           }
         },
         "tooltip": [
-          { "field": "year", "title": "Year", "format": "d" },
-          { "field": "visitor_arrivals", "title": "Visitor arrivals", "format": ",.0f" }
+          { "field": "country",           "title": "Country" },
+          { "field": "region",            "title": "Region" },
+          { "field": "trips_thousands",   "title": "Visitor trips (thousands)", "format": ",.0f" },
+          { "field": "spend_million_aud", "title": "Spend in Australia ($M AUD)", "format": ",.0f" }
         ]
-      }
-    },
-    {
-      "data": {
-        "url": "Data/arrivals_trend_annual.csv",
-        "format": { "type": "csv", "parse": { "year": "number", "visitor_arrivals": "number" } }
-      },
-      "mark": { "type": "point", "color": "#185FA5", "filled": true, "size": 55 },
-      "encoding": {
-        "x": { "field": "year", "type": "quantitative" },
-        "y": { "field": "visitor_arrivals", "type": "quantitative" }
-      }
-    },
-    {
-      "data": {
-        "values": [
-          { "year": 2019, "visitor_arrivals": 9464000, "label": "Peak: 9.4M", "anchor": "start" },
-          { "year": 2021, "visitor_arrivals": 263000, "label": "▼ 97% collapse", "anchor": "start" },
-          { "year": 2024, "visitor_arrivals": 8402000, "label": "89% recovered ▲", "anchor": "start" }
-        ]
-      },
-      "mark": { "type": "text", "fontSize": 10, "fontWeight": "bold", "dx": 6, "dy": -10 },
-      "encoding": {
-        "x": { "field": "year", "type": "quantitative" },
-        "y": { "field": "visitor_arrivals", "type": "quantitative" },
-        "text": { "field": "label" },
-        "color": {
-          "condition": [
-            { "test": "datum.year === 2021", "value": "#A32D2D" },
-            { "test": "datum.year === 2024", "value": "#2e6b1f" }
-          ],
-          "value": "#185FA5"
-        }
-      }
-    },
-    {
-      "data": {
-        "values": [{ "year": 2021, "visitor_arrivals": 5500000, "label": "COVID-19 border restrictions" }]
-      },
-      "mark": { "type": "text", "color": "#A32D2D", "fontSize": 10, "fontStyle": "italic", "dx": 6 },
-      "encoding": {
-        "x": { "field": "year", "type": "quantitative" },
-        "y": { "field": "visitor_arrivals", "type": "quantitative" },
-        "text": { "field": "label" }
       }
     }
   ],
   "config": {
     "view": { "stroke": null },
-    "axis": { "domain": false, "ticks": false }
+    "background": "#dde9f2"
   }
 }
