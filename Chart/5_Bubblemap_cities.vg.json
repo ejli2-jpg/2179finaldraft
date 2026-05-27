@@ -64,15 +64,16 @@
       },
       "mark": {
         "type": "text",
-        "dy": -18,
+        "dy": -28,
         "fontSize": 11,
         "fontWeight": "bold",
-        "color": "#333333"
+        "color": "#222222",
+        "font": "Segoe UI"
       },
       "encoding": {
         "longitude": {"field": "longitude", "type": "quantitative"},
         "latitude": {"field": "latitude", "type": "quantitative"},
-        "text": {"field": "city"}
+        "text": {"field": "city", "type": "nominal"}
       }
     },
     {
@@ -81,17 +82,19 @@
       },
       "mark": {
         "type": "text",
-        "dy": -4,
+        "dy": -16,
         "fontSize": 10,
-        "color": "#555555"
+        "color": "#D85A30",
+        "fontWeight": "bold",
+        "font": "Segoe UI"
       },
       "encoding": {
         "longitude": {"field": "longitude", "type": "quantitative"},
         "latitude": {"field": "latitude", "type": "quantitative"},
         "text": {
           "field": "spend_billion_aud",
-          "format": ".1f",
-          "type": "quantitative"
+          "type": "quantitative",
+          "format": ".1f"
         }
       }
     }
