@@ -273,14 +273,27 @@
     /* World map sidebar layout */
     .map-with-sidebar {
       display: grid;
-      grid-template-columns: 1fr 300px;
-      gap: 32px;
+      grid-template-columns: minmax(0, 1fr) 280px;
+      gap: 28px;
       align-items: start;
       margin-bottom: 20px;
     }
 
+    .map-main {
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    /* Force Vega output to fill container */
+    .map-main .vega-embed,
+    .map-main .vega-embed canvas,
+    .map-main .vega-embed svg {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+
     .map-sidebar {
-      padding-top: 36px;
+      padding-top: 34px;
     }
 
     .map-sidebar .insight-box {
@@ -289,11 +302,11 @@
     }
 
     .map-sidebar .chart-intro {
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .map-sidebar .chart-outro {
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .footer {
@@ -579,7 +592,7 @@
       what direct-route shutdowns alone would have caused.
     </p>
 
-    <!-- WORLD MAP with sidebar text -->
+    <!-- WORLD MAP with sidebar -->
     <div class="map-with-sidebar">
       <div class="map-main">
         <div class="chart-head">
@@ -588,7 +601,12 @@
         </div>
         <div class="chart-body">
           <div id="choropleth_world"></div>
-          <script>vegaEmbed('#choropleth_world', 'Chart/6_Choropleth_world.vg.json').catch(console.error);</script>
+          <script>
+            vegaEmbed('#choropleth_world', 'Chart/6_Choropleth_world.vg.json', {
+              actions: false,
+              config: { autosize: { type: "fit-x", contains: "padding" } }
+            }).catch(console.error);
+          </script>
         </div>
       </div>
       <div class="map-sidebar">
@@ -900,4 +918,5 @@
 
 </body>
 </html>
+
 
