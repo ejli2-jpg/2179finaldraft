@@ -270,26 +270,18 @@
       padding-top: 20px;
     }
 
-    /* World map sidebar layout */
+    /* Map below text grid */
+    .map-below-grid {
+      display: none;
+    }
+
+    /* World map + sidebar */
     .map-with-sidebar {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 280px;
-      gap: 28px;
+      grid-template-columns: 560px 1fr;
+      gap: 32px;
       align-items: start;
       margin-bottom: 20px;
-    }
-
-    .map-main {
-      min-width: 0;
-      overflow: hidden;
-    }
-
-    /* Force Vega output to fill container */
-    .map-main .vega-embed,
-    .map-main .vega-embed canvas,
-    .map-main .vega-embed svg {
-      width: 100% !important;
-      max-width: 100% !important;
     }
 
     .map-sidebar {
@@ -298,15 +290,7 @@
 
     .map-sidebar .insight-box {
       max-width: none;
-      margin: 0;
-    }
-
-    .map-sidebar .chart-intro {
-      margin-bottom: 14px;
-    }
-
-    .map-sidebar .chart-outro {
-      margin-bottom: 18px;
+      margin-top: 16px;
     }
 
     .footer {
@@ -592,7 +576,7 @@
       what direct-route shutdowns alone would have caused.
     </p>
 
-    <!-- WORLD MAP with sidebar -->
+    <!-- WORLD MAP with right sidebar -->
     <div class="map-with-sidebar">
       <div class="map-main">
         <div class="chart-head">
@@ -601,12 +585,7 @@
         </div>
         <div class="chart-body">
           <div id="choropleth_world"></div>
-          <script>
-            vegaEmbed('#choropleth_world', 'Chart/6_Choropleth_world.vg.json', {
-              actions: false,
-              config: { autosize: { type: "fit-x", contains: "padding" } }
-            }).catch(console.error);
-          </script>
+          <script>vegaEmbed('#choropleth_world', 'Chart/6_Choropleth_world.vg.json').catch(console.error);</script>
         </div>
       </div>
       <div class="map-sidebar">
@@ -622,7 +601,7 @@
           minor sources. This geographic concentration creates both opportunity and vulnerability: strong
           growth in any single major market can meaningfully lift national totals, but so can a decline.
         </p>
-        <div class="insight-box">
+        <div class="insight-box" style="max-width:none; margin:16px 0 0;">
           <span class="insight-label">Key insight</span>
           <p>The relationship between visitor volume and visitor spending is uneven across international
           markets. Although New Zealand sends the highest number of visitors to Australia, Chinese visitors
@@ -918,5 +897,6 @@
 
 </body>
 </html>
+
 
 
