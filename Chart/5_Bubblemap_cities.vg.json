@@ -25,10 +25,13 @@
       }
     },
     {
-      "data": {"url": "https://raw.githubusercontent.com/ejli2-jpg/2179finaldraft/refs/heads/main/Data/spend_by_city.csv"},
+      "data": {
+        "url": "https://raw.githubusercontent.com/ejli2-jpg/2179finaldraft/refs/heads/main/Data/spend_by_city.csv"
+      },
       "mark": {
         "type": "circle",
         "opacity": 0.82,
+        "color": "#D85A30",
         "stroke": "#ffffff",
         "strokeWidth": 1.5
       },
@@ -43,33 +46,22 @@
           "legend": {
             "orient": "bottom-right",
             "titleFontSize": 11,
-            "labelFontSize": 10
+            "labelFontSize": 10,
+            "title": "Spend ($B AUD)"
           }
-        },
-        "color": {
-          "field": "spend_billion_aud",
-          "type": "quantitative",
-          "scale": {"scheme": "reds"},
-          "legend": null
         },
         "tooltip": [
           {"field": "city", "title": "City"},
           {"field": "state", "title": "State"},
-          {
-            "field": "spend_billion_aud",
-            "title": "Domestic spend ($B AUD)",
-            "format": ".2f"
-          },
-          {
-            "field": "trips_millions",
-            "title": "Overnight trips (M)",
-            "format": ".1f"
-          }
+          {"field": "spend_billion_aud", "title": "Domestic spend ($B AUD)", "format": ".2f"},
+          {"field": "trips_millions", "title": "Overnight trips (M)", "format": ".1f"}
         ]
       }
     },
     {
-      "data": {"url": "../Data/spend_by_city.csv"},
+      "data": {
+        "url": "https://raw.githubusercontent.com/ejli2-jpg/2179finaldraft/refs/heads/main/Data/spend_by_city.csv"
+      },
       "mark": {
         "type": "text",
         "dy": -18,
@@ -81,6 +73,26 @@
         "longitude": {"field": "longitude", "type": "quantitative"},
         "latitude": {"field": "latitude", "type": "quantitative"},
         "text": {"field": "city"}
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/ejli2-jpg/2179finaldraft/refs/heads/main/Data/spend_by_city.csv"
+      },
+      "mark": {
+        "type": "text",
+        "dy": -4,
+        "fontSize": 10,
+        "color": "#555555"
+      },
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "text": {
+          "field": "spend_billion_aud",
+          "format": ".1f",
+          "type": "quantitative"
+        }
       }
     }
   ],
