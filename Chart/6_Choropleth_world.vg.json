@@ -13,6 +13,7 @@
   },
   "width": 680,
   "height": 460,
+  "autosize": { "type": "fit", "contains": "padding" },
   "params": [
     {
       "name": "continent",
