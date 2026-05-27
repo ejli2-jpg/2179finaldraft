@@ -8,7 +8,7 @@
     "subtitleFontSize": 11,
     "subtitleColor": "#666"
   },
-  "width": 400,
+  "width": 500,
   "height": 280,
   "data": {
     "url": "Data/visitor_nights_by_type.csv"
