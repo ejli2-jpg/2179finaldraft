@@ -4,6 +4,9 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tourism in Australia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
@@ -12,7 +15,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
       background: #f5f4f0;
       color: #1a1a1a;
       line-height: 1.6;
@@ -33,21 +36,34 @@
     }
 
     .hero h1 {
-      font-size: 46px;
-      font-weight: 700;
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 48px;
+      font-weight: 400;
       color: #ffffff;
       line-height: 1.15;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.3px;
       margin-bottom: 24px;
       max-width: 820px;
     }
 
     .hero-body {
       font-size: 17px;
-      color: rgba(255,255,255,0.62);
-      line-height: 1.8;
+      font-weight: 300;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.85;
       max-width: none;
       margin-bottom: 44px;
+    }
+
+    .hero-method {
+      font-size: 12px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.38);
+      line-height: 1.7;
+      max-width: none;
+      margin-top: -28px;
+      margin-bottom: 36px;
+      letter-spacing: 0.1px;
     }
 
     .stats-grid {
@@ -64,18 +80,20 @@
     }
 
     .stat-value {
-      font-size: 34px;
-      font-weight: 700;
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 36px;
+      font-weight: 400;
       color: #ffffff;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.3px;
       margin-bottom: 6px;
       line-height: 1;
     }
 
     .stat-label {
-      font-size: 13px;
+      font-size: 12px;
+      font-weight: 300;
       color: rgba(255,255,255,0.45);
-      line-height: 1.4;
+      line-height: 1.45;
     }
 
     .band {
@@ -103,16 +121,18 @@
     }
 
     .band-title {
-      font-size: 15px;
-      font-weight: 600;
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 16px;
+      font-weight: 400;
       color: #ffffff;
       margin-bottom: 5px;
     }
 
     .band-sub {
       font-size: 13px;
-      color: rgba(255,255,255,0.52);
-      line-height: 1.65;
+      font-weight: 300;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
       max-width: 820px;
     }
 
@@ -126,40 +146,45 @@
 
     .sec-eyebrow {
       font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 1.4px;
+      font-weight: 500;
+      letter-spacing: 1.8px;
       text-transform: uppercase;
-      color: #9e9b94;
+      color: #D85A30;
       margin-bottom: 6px;
     }
 
     .section h2 {
-      font-size: 26px;
-      font-weight: 700;
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 28px;
+      font-weight: 400;
       color: #1a1a1a;
       margin-bottom: 10px;
+      line-height: 1.2;
     }
 
     .sec-body {
       font-size: 14px;
-      color: #555;
-      line-height: 1.75;
+      font-weight: 300;
+      color: #4a4a4a;
+      line-height: 1.85;
       max-width: none;
       margin-bottom: 28px;
     }
 
     .chart-intro {
       font-size: 13px;
-      color: #666;
-      line-height: 1.7;
+      font-weight: 300;
+      color: #555;
+      line-height: 1.75;
       margin-bottom: 14px;
       max-width: none;
     }
 
     .chart-outro {
       font-size: 13px;
-      color: #666;
-      line-height: 1.7;
+      font-weight: 300;
+      color: #555;
+      line-height: 1.75;
       margin-top: 10px;
       margin-bottom: 4px;
       max-width: none;
@@ -190,14 +215,17 @@
 
     .chart-title {
       font-size: 12px;
-      font-weight: 600;
+      font-weight: 500;
       color: #1a1a1a;
+      letter-spacing: 0.1px;
     }
 
     .chart-sub {
       font-size: 10px;
+      font-weight: 300;
       color: #9e9b94;
-      margin-top: 2px;
+      margin-top: 3px;
+      letter-spacing: 0.1px;
     }
 
     .chart-body {
@@ -216,8 +244,8 @@
 
     .insight-label {
       font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1.2px;
+      font-weight: 600;
+      letter-spacing: 1.4px;
       text-transform: uppercase;
       color: #D85A30;
       display: block;
@@ -226,16 +254,18 @@
 
     .insight-box p {
       font-size: 13px;
+      font-weight: 300;
       color: #333;
-      line-height: 1.65;
+      line-height: 1.7;
     }
 
     .connector {
       font-size: 14px;
-      color: #555;
-      line-height: 1.75;
-      margin: 24px 0 8px;
+      font-weight: 300;
       font-style: italic;
+      color: #4a4a4a;
+      line-height: 1.85;
+      margin: 24px 0 8px;
       border-top: 1px solid #ebe9e3;
       padding-top: 20px;
     }
@@ -249,7 +279,7 @@
       align-items: center;
     }
 
-    .footer span { font-size: 11px; color: #9e9b94; }
+    .footer span { font-size: 11px; font-weight: 300; color: #9e9b94; letter-spacing: 0.1px; }
 
     @media (max-width: 900px) {
       .stats-grid, .chart-grid-2 { grid-template-columns: 1fr; }
@@ -275,6 +305,11 @@
       demand has returned strongly since borders reopened, the recovery has been uneven across states, cities,
       and international markets. Some destinations have surpassed pre-pandemic levels, while others continue
       to rely on the slow return of high-value overseas visitors.
+    </p>
+    <p class="hero-method">
+      Data sources: Tourism Research Australia (TRA) National Visitor Survey (NVS) and International Visitor Survey (IVS) &middot;
+      Australian Bureau of Statistics (ABS) Overseas Arrivals &amp; Departures &middot; Year ending December 2024 &middot;
+      All monetary figures in Australian dollars (AUD) &middot; Visualisation created for FIT2179, Monash University.
     </p>
     <div class="stats-grid">
       <div class="stat-card">
@@ -833,6 +868,7 @@
   <!-- FOOTER -->
   <footer class="footer">
     <span>Data: Tourism Research Australia (TRA) &middot; Australian Bureau of Statistics (ABS) &middot; Year ending Dec 2024 &middot; All figures AUD</span>
+    <span>FIT2179 Data Visualisation &middot; Monash University &middot; 2024</span>
   </footer>
 
 </body>
