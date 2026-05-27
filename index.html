@@ -270,22 +270,30 @@
       padding-top: 20px;
     }
 
-    /* Map below text grid */
-    .map-below-grid {
-      display: none;
-    }
-
     /* World map + sidebar */
     .map-with-sidebar {
       display: grid;
-      grid-template-columns: 560px 1fr;
+      grid-template-columns: auto 320px;
       gap: 32px;
       align-items: start;
       margin-bottom: 20px;
     }
 
+    .map-main {
+      flex-shrink: 0;
+    }
+
     .map-sidebar {
       padding-top: 34px;
+      min-width: 0;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .map-sidebar p,
+    .map-sidebar .insight-box {
+      max-width: 100%;
+      word-wrap: break-word;
     }
 
     .map-sidebar .insight-box {
@@ -897,6 +905,3 @@
 
 </body>
 </html>
-
-
-
