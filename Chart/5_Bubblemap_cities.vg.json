@@ -8,7 +8,7 @@
     "subtitleFontSize": 11,
     "subtitleColor": "#666"
   },
-  "width": 600,
+  "width": 650,
   "height": 450,
   "projection": {"type": "mercator", "center": [133, -28], "scale": 620},
   "layer": [
