@@ -6,7 +6,7 @@
     "anchor": "start", "fontSize": 15, "subtitleFontSize": 11, "subtitleColor": "#666"
   },
   "width": 750,
-  "height": 380,
+  "height": 400,
   "data": { "url": "Data/covid_recovery_countries.csv" },
   "transform": [
     {
