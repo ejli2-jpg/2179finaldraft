@@ -13,21 +13,14 @@
   },
   "width": 800,
   "height": 460,
+  "autosize": {"type": "fit", "contains": "padding"},
   "params": [
     {
       "name": "continent",
       "value": "World",
       "bind": {
         "input": "select",
-        "options": [
-          "World",
-          "Asia",
-          "Oceania",
-          "Europe",
-          "Americas",
-          "Africa",
-          "Middle East"
-        ],
+        "options": ["World","Asia","Oceania","Europe","Americas","Africa","Middle East"],
         "name": "Zoom to region: "
       }
     },
@@ -46,65 +39,47 @@
   ],
   "projection": {
     "type": "naturalEarth1",
-    "scale": { "expr": "proj_scale" },
-    "translate": { "expr": "[proj_tx, proj_ty]" }
+    "scale": {"expr": "proj_scale"},
+    "translate": {"expr": "[proj_tx, proj_ty]"}
   },
   "layer": [
     {
       "data": {
         "url": "https://cdn.jsdelivr.net/npm/vega-datasets@2/data/world-110m.json",
-        "format": { "type": "topojson", "feature": "graticule" }
+        "format": {"type": "topojson", "feature": "graticule"}
       },
-      "mark": {
-        "type": "geoshape",
-        "stroke": "#b0c8d8",
-        "strokeWidth": 0.3,
-        "filled": false
-      }
+      "mark": {"type": "geoshape", "stroke": "#b0c8d8", "strokeWidth": 0.3, "filled": false}
     },
     {
       "data": {
         "url": "https://cdn.jsdelivr.net/npm/vega-datasets@2/data/world-110m.json",
-        "format": { "type": "topojson", "feature": "countries" }
+        "format": {"type": "topojson", "feature": "countries"}
       },
-      "mark": {
-        "type": "geoshape",
-        "fill": "#d8e8ef",
-        "stroke": "#ffffff",
-        "strokeWidth": 0.4
-      }
+      "mark": {"type": "geoshape", "fill": "#d8e8ef", "stroke": "#ffffff", "strokeWidth": 0.4}
     },
     {
       "data": {
         "url": "https://cdn.jsdelivr.net/npm/vega-datasets@2/data/world-110m.json",
-        "format": { "type": "topojson", "feature": "countries" }
+        "format": {"type": "topojson", "feature": "countries"}
       },
       "transform": [
         {
           "lookup": "id",
           "from": {
-            "data": { "url": "Data/intl_visitors_all_countries_v2.csv" },
+            "data": {"url": "Data/intl_visitors_all_countries_v2.csv"},
             "key": "country_id",
             "fields": ["country", "trips_thousands", "spend_million_aud", "region"]
           }
         },
-        { "filter": "datum.trips_thousands != null" }
+        {"filter": "datum.trips_thousands != null"}
       ],
-      "mark": {
-        "type": "geoshape",
-        "stroke": "#ffffff",
-        "strokeWidth": 0.4
-      },
+      "mark": {"type": "geoshape", "stroke": "#ffffff", "strokeWidth": 0.4},
       "encoding": {
         "color": {
           "field": "trips_thousands",
           "type": "quantitative",
           "title": "Visitor trips (thousands)",
-          "scale": {
-            "type": "log",
-            "scheme": "tealblues",
-            "domain": [1, 1400]
-          },
+          "scale": {"type": "log", "scheme": "tealblues", "domain": [1, 1400]},
           "legend": {
             "orient": "bottom-left",
             "titleFontSize": 12,
@@ -115,16 +90,16 @@
           }
         },
         "tooltip": [
-          { "field": "country",           "title": "Country" },
-          { "field": "region",            "title": "Region" },
-          { "field": "trips_thousands",   "title": "Visitor trips (thousands)", "format": ",.0f" },
-          { "field": "spend_million_aud", "title": "Spend in Australia ($M AUD)", "format": ",.0f" }
+          {"field": "country",           "title": "Country"},
+          {"field": "region",            "title": "Region"},
+          {"field": "trips_thousands",   "title": "Visitor trips (thousands)", "format": ",.0f"},
+          {"field": "spend_million_aud", "title": "Spend in Australia ($M AUD)", "format": ",.0f"}
         ]
       }
     }
   ],
   "config": {
-    "view": { "stroke": null },
+    "view": {"stroke": null},
     "background": "#dde9f2"
   }
 }
