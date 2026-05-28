@@ -138,7 +138,7 @@
 
     .section {
       background: #ffffff;
-      padding: 40px 48px 32px;
+      padding: 40px 32px 32px;
       border-top: 1px solid #e8e6e0;
     }
 
@@ -273,7 +273,7 @@
     /* World map + sidebar */
     .map-with-sidebar {
       display: grid;
-      grid-template-columns: 500px 1fr;
+      grid-template-columns: 1fr 300px;
       gap: 24px;
       align-items: start;
       margin-bottom: 20px;
@@ -281,9 +281,15 @@
 
     .map-main {
       min-width: 0;
+      overflow: hidden;
+    }
+
+    .map-main .vega-embed {
+      max-width: 100%;
     }
 
     .map-sidebar {
+      position: static;
       padding-top: 0;
       min-width: 0;
       word-wrap: break-word;
@@ -424,21 +430,18 @@
     </p>
 
     <div class="chart-grid-2">
-
       <div class="chart-block">
         <div class="chart-body">
           <div id="line_arrivals"></div>
           <script>vegaEmbed('#line_arrivals', 'Chart/2_Line_arrivals.vg.json').catch(console.error);</script>
         </div>
       </div>
-
       <div class="chart-block">
         <div class="chart-body">
           <div id="area_nights"></div>
           <script>vegaEmbed('#area_nights', 'Chart/3_Area_night_comparison.vg.json').catch(console.error);</script>
         </div>
       </div>
-
     </div>
 
     <p class="chart-outro">
@@ -496,21 +499,18 @@
     </p>
 
     <div class="chart-grid-2">
-
       <div class="chart-block">
         <div class="chart-body">
           <div id="choropleth_domestic"></div>
           <script>vegaEmbed('#choropleth_domestic', 'Chart/4_Choropleth_domestic.vg.json').catch(console.error);</script>
         </div>
       </div>
-
       <div class="chart-block">
         <div class="chart-body">
           <div id="bubble_map"></div>
           <script>vegaEmbed('#bubble_map', 'Chart/5_Bubblemap_cities.vg.json').catch(console.error);</script>
         </div>
       </div>
-
     </div>
 
     <p class="chart-outro">
@@ -602,21 +602,18 @@
     </p>
 
     <div class="chart-grid-2">
-
       <div class="chart-block">
         <div class="chart-body">
           <div id="bar_top_markets"></div>
           <script>vegaEmbed('#bar_top_markets', 'Chart/7_Bar_Top10.vg.json').catch(console.error);</script>
         </div>
       </div>
-
       <div class="chart-block">
         <div class="chart-body">
           <div id="scatter_spend_trips"></div>
           <script>vegaEmbed('#scatter_spend_trips', 'Chart/8_Scatter_spend_trips.vg.json').catch(console.error);</script>
         </div>
       </div>
-
     </div>
 
     <p class="chart-outro">
@@ -675,21 +672,18 @@
     </p>
 
     <div class="chart-grid-2">
-
       <div class="chart-block">
         <div class="chart-body">
           <div id="stacked_bar_purpose"></div>
           <script>vegaEmbed('#stacked_bar_purpose', 'Chart/10_stacked_bar_purpose.vg.json').catch(console.error);</script>
         </div>
       </div>
-
       <div class="chart-block">
         <div class="chart-body">
           <div id="tree_activity"></div>
           <script>vegaEmbed('#tree_activity', 'Chart/11_tree_activities.vg.json').catch(console.error);</script>
         </div>
       </div>
-
     </div>
 
     <p class="chart-outro">
@@ -773,21 +767,18 @@
     </p>
 
     <div class="chart-grid-2">
-
       <div class="chart-block">
         <div class="chart-body">
           <div id="heatmap_seasonality"></div>
           <script>vegaEmbed('#heatmap_seasonality', 'Chart/12_heatmap_seasonality.vg.json').catch(console.error);</script>
         </div>
       </div>
-
       <div class="chart-block">
         <div class="chart-body">
           <div id="slope_recovery"></div>
           <script>vegaEmbed('#slope_recovery', 'Chart/13_slope_recovery.vg.json').catch(console.error);</script>
         </div>
       </div>
-
     </div>
 
     <p class="chart-outro">
