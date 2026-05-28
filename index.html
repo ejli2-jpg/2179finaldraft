@@ -139,7 +139,7 @@
     .section {
       background: #ffffff;
       padding: 40px 32px 32px;
-      border-top: 1px solid #e8e6e0;
+      border-top: 3px solid #D85A30;
     }
 
     .section.last { padding-bottom: 52px; }
@@ -153,6 +153,17 @@
       margin-bottom: 6px;
     }
 
+    .sec-eyebrow::before {
+      content: attr(data-num);
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 64px;
+      font-weight: 400;
+      color: #f0ede8;
+      display: block;
+      line-height: 1;
+      margin-bottom: -8px;
+    }
+
     .section h2 {
       font-family: 'DM Serif Display', Georgia, serif;
       font-size: 28px;
@@ -160,10 +171,12 @@
       color: #1a1a1a;
       margin-bottom: 10px;
       line-height: 1.2;
+      border-left: 4px solid #D85A30;
+      padding-left: 14px;
     }
 
     .sec-body {
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 300;
       color: #4a4a4a;
       line-height: 1.85;
@@ -172,18 +185,18 @@
     }
 
     .chart-intro {
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 300;
-      color: #555;
+      color: #777;
       line-height: 1.75;
       margin-bottom: 14px;
       max-width: none;
     }
 
     .chart-outro {
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 300;
-      color: #555;
+      color: #777;
       line-height: 1.75;
       margin-top: 10px;
       margin-bottom: 4px;
@@ -239,7 +252,7 @@
       border-radius: 0 8px 8px 0;
       padding: 14px 18px;
       margin: 20px 0;
-      max-width: 720px;
+      max-width: none;
     }
 
     .insight-label {
@@ -399,7 +412,7 @@
 
   <!-- SECTION 1 -->
   <section class="section" id="section1">
-    <p class="sec-eyebrow">Section 1 &mdash; the big picture</p>
+    <p class="sec-eyebrow" data-num="01">Section 1 &mdash; the big picture</p>
     <h2>Tourism rebounded &mdash; but the recovery remains uneven</h2>
     <p class="sec-body">
       Australia's tourism industry operates at two very different scales. Domestic tourism dominates in raw
@@ -494,7 +507,7 @@
 
   <!-- SECTION 2 -->
   <section class="section" id="where">
-    <p class="sec-eyebrow">Section 2 &mdash; where in australia</p>
+    <p class="sec-eyebrow" data-num="02">Section 2 &mdash; where in australia</p>
     <h2>Where tourism activity concentrates</h2>
     <p class="sec-body">
       Tourism activity in Australia is highly concentrated in the eastern states, particularly New South Wales,
@@ -564,7 +577,7 @@
 
   <!-- SECTION 3 -->
   <section class="section" id="international">
-    <p class="sec-eyebrow">Section 3 &mdash; international visitors</p>
+    <p class="sec-eyebrow" data-num="03">Section 3 &mdash; international visitors</p>
     <h2>Who visits Australia &mdash; and who spends the most</h2>
     <p class="sec-body">
       Australia attracts visitors from across the world, but international tourism is dominated by a relatively
@@ -665,7 +678,7 @@
 
   <!-- SECTION 4 -->
   <section class="section" id="purpose">
-    <p class="sec-eyebrow">Section 4 &mdash; purpose &amp; activities</p>
+    <p class="sec-eyebrow" data-num="04">Section 4 &mdash; purpose &amp; activities</p>
     <h2>Purpose &amp; activities</h2>
     <p class="sec-body">
       Visitor behaviour differs substantially between domestic and international tourism markets. Domestic
@@ -758,7 +771,7 @@
 
   <!-- SECTION 5 -->
   <section class="section last" id="recovery">
-    <p class="sec-eyebrow">Section 5 &mdash; timing &amp; recovery</p>
+    <p class="sec-eyebrow" data-num="05">Section 5 &mdash; timing &amp; recovery</p>
     <h2>The uneven road back from COVID</h2>
     <p class="sec-body">
       The COVID-19 pandemic reshaped Australia's tourism industry more dramatically than any previous
