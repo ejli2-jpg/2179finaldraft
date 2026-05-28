@@ -282,10 +282,16 @@
     .map-main {
       min-width: 0;
       overflow: hidden;
+      display: inline-block;
     }
 
     .map-main .vega-embed {
       max-width: 100%;
+      display: block;
+    }
+
+    .map-main .vega-embed summary {
+      display: none;
     }
 
     .map-sidebar {
