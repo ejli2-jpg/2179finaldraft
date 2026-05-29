@@ -5,8 +5,8 @@
     "subtitle": "Green = above pre-COVID levels | Red = still below | Source: TRA IVS",
     "anchor": "start", "fontSize": 15, "subtitleFontSize": 11, "subtitleColor": "#666"
   },
-  "width": 500,
-  "height": 460,
+  "width": 550,
+  "height": 500,
   "data": { "url": "Data/covid_recovery_countries.csv" },
   "transform": [
     {
