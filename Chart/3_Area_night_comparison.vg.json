@@ -36,8 +36,7 @@
             "labelFontSize": 10,
             "grid": true,
             "gridDash": [3, 3],
-            "gridColor": "
-#e0e0e0"
+            "gridColor": "#e0e0e0"
           }
         },
         "color": {
@@ -46,9 +45,7 @@
           "title": "Visitor type",
           "scale": {
             "domain": ["Domestic", "International"],
-            "range": ["
-#D85A30", "
-#185FA5"]
+            "range": ["#D85A30", "#185FA5"]
           },
           "legend": null
         },
@@ -137,12 +134,53 @@
           "type": "nominal",
           "scale": {
             "domain": ["Domestic", "International"],
-            "range": ["
-#D85A30", "
-#185FA5"]
+            "range": ["#D85A30", "#185FA5"]
           },
           "legend": null
         }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          { "x": "2020-06-01", "y": 200, "label": "COVID-19 collapse:" },
+          { "x": "2020-06-01", "y": 175, "label": "intl. arrivals near zero," },
+          { "x": "2020-06-01", "y": 150, "label": "domestic travel sharply down" }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 6,
+        "fontSize": 9.5,
+        "fontStyle": "italic",
+        "color": "#888"
+      },
+      "encoding": {
+        "x": { "field": "x", "type": "temporal" },
+        "y": { "field": "y", "type": "quantitative" },
+        "text": { "field": "label" }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          { "x": "2023-01-01", "y": 75, "label": "International recovery" },
+          { "x": "2023-01-01", "y": 55, "label": "still below 2019 levels" }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 4,
+        "fontSize": 9.5,
+        "fontStyle": "italic",
+        "color": "#185FA5"
+      },
+      "encoding": {
+        "x": { "field": "x", "type": "temporal" },
+        "y": { "field": "y", "type": "quantitative" },
+        "text": { "field": "label" }
       }
     }
   ],
@@ -151,5 +189,4 @@
     "axis": { "domain": false, "ticks": false }
   }
 }
-
 
