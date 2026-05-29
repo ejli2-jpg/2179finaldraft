@@ -83,7 +83,7 @@
             "dy": 0,
             "fontSize": 10,
             "fontStyle": "italic",
-            "color": "#444"
+            "color": "#222222"
           },
           "encoding": {
             "x": { "field": "x", "type": "temporal" },
@@ -104,7 +104,7 @@
         "align": "left",
         "fontSize": 10,
         "fontStyle": "italic",
-        "color": "#888"
+        "color": "#444444"
       },
       "encoding": {
         "x": { "field": "x", "type": "temporal" },
@@ -154,7 +154,7 @@
         "dx": 6,
         "fontSize": 9.5,
         "fontStyle": "italic",
-        "color": "#888"
+        "color": "#333333"
       },
       "encoding": {
         "x": { "field": "x", "type": "temporal" },
@@ -175,7 +175,7 @@
         "dx": 4,
         "fontSize": 9.5,
         "fontStyle": "italic",
-        "color": "#185FA5"
+        "color": "#0d3d6e"
       },
       "encoding": {
         "x": { "field": "x", "type": "temporal" },
@@ -189,4 +189,3 @@
     "axis": { "domain": false, "ticks": false }
   }
 }
-
