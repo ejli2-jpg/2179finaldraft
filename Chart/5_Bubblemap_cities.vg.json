@@ -44,7 +44,7 @@
           "title": "Spend ($B AUD)",
           "scale": {"range": [150, 3800]},
           "legend": {
-            "orient": "bottom-right",
+            "orient": "bottom-left",
             "titleFontSize": 11,
             "labelFontSize": 10,
             "title": "Spend ($B AUD)"
@@ -78,9 +78,9 @@
     {
       "data": {
         "values": [
-          {"longitude": 147.5, "latitude": -32.5, "label": "Sydney leads all cities —"},
-          {"longitude": 147.5, "latitude": -33.5, "label": "highest spend driven by"},
-          {"longitude": 147.5, "latitude": -34.5, "label": "international visitors"}
+          {"longitude": 153.5, "latitude": -30.5, "label": "Sydney leads all cities —"},
+          {"longitude": 153.5, "latitude": -31.5, "label": "highest spend driven by"},
+          {"longitude": 153.5, "latitude": -32.5, "label": "international visitors"}
         ]
       },
       "mark": {"type": "text", "align": "left", "fontSize": 10, "fontStyle": "italic", "color": "#D85A30"},
@@ -93,9 +93,9 @@
     {
       "data": {
         "values": [
-          {"longitude": 139.5, "latitude": -39.5, "label": "Melbourne: high trip"},
-          {"longitude": 139.5, "latitude": -40.5, "label": "volume but lower total"},
-          {"longitude": 139.5, "latitude": -41.5, "label": "spend than Sydney"}
+          {"longitude": 153.5, "latitude": -37.5, "label": "Melbourne: high trip"},
+          {"longitude": 153.5, "latitude": -38.5, "label": "volume but lower total"},
+          {"longitude": 153.5, "latitude": -39.5, "label": "spend than Sydney"}
         ]
       },
       "mark": {"type": "text", "align": "left", "fontSize": 10, "fontStyle": "italic", "color": "#185FA5"},
@@ -108,9 +108,9 @@
     {
       "data": {
         "values": [
-          {"longitude": 113.0, "latitude": -30.8, "label": "Perth isolated by"},
-          {"longitude": 113.0, "latitude": -31.8, "label": "distance; smaller"},
-          {"longitude": 113.0, "latitude": -32.8, "label": "visitor base"}
+          {"longitude": 112.5, "latitude": -30.5, "label": "Perth isolated by"},
+          {"longitude": 112.5, "latitude": -31.5, "label": "distance; smaller"},
+          {"longitude": 112.5, "latitude": -32.5, "label": "visitor base"}
         ]
       },
       "mark": {"type": "text", "align": "left", "fontSize": 10, "fontStyle": "italic", "color": "#666666"},
@@ -123,9 +123,9 @@
     {
       "data": {
         "values": [
-          {"longitude": 129.0, "latitude": -26.5, "label": "Darwin & Hobart:"},
-          {"longitude": 129.0, "latitude": -27.5, "label": "smallest capitals,"},
-          {"longitude": 129.0, "latitude": -28.5, "label": "smallest visitor spend"}
+          {"longitude": 129.0, "latitude": -24.5, "label": "Darwin & Hobart:"},
+          {"longitude": 129.0, "latitude": -25.5, "label": "smallest capitals,"},
+          {"longitude": 129.0, "latitude": -26.5, "label": "smallest visitor spend"}
         ]
       },
       "mark": {"type": "text", "align": "left", "fontSize": 10, "fontStyle": "italic", "color": "#666666"},
