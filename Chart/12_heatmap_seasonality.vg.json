@@ -6,7 +6,7 @@
     "anchor": "start", "fontSize": 15, "subtitleFontSize": 11, "subtitleColor": "#666"
   },
   "width": 560,
-  "height": 400,
+  "height": 460,
   "data": { "url": "Data/monthly_arrivals.csv" },
   "mark": { "type": "rect", "cornerRadius": 2 },
   "encoding": {
