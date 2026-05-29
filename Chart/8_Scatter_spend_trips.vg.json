@@ -45,7 +45,14 @@
       "field": "spend_per_trip_k", "type": "quantitative",
       "title": "Spend per trip ($K)",
       "scale": { "range": [60, 1600] },
-      "legend": { "orient": "bottom-right", "titleFontSize": 11, "labelFontSize": 10 }
+      "legend": {
+        "orient": "bottom",
+        "direction": "horizontal",
+        "titleFontSize": 11,
+        "labelFontSize": 10,
+        "titleOrient": "left",
+        "padding": 8
+      }
     },
     "color": {
       "field": "region", "type": "nominal",
@@ -54,7 +61,14 @@
         "domain": ["Asia", "Americas", "Europe", "Oceania", "Middle East & Africa"],
         "range":  ["#D85A30", "#185FA5", "#7F77DD", "#1D9E75", "#BA7517"]
       },
-      "legend": { "orient": "top-right", "titleFontSize": 11, "labelFontSize": 11 }
+      "legend": {
+        "orient": "bottom",
+        "direction": "horizontal",
+        "titleFontSize": 11,
+        "labelFontSize": 11,
+        "titleOrient": "left",
+        "padding": 8
+      }
     },
     "opacity": {
       "condition": { "param": "hover", "value": 1 },
