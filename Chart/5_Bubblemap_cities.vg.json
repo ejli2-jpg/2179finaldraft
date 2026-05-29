@@ -78,11 +78,11 @@
     {
       "data": {
         "values": [
-          {"longitude": 119.0, "latitude": -19.5, "label": "Sydney leads all cities — highest spend"},
-          {"longitude": 119.0, "latitude": -21.0, "label": "boosted by international visitors"}
+          {"longitude": 152.5, "latitude": -32.0, "label": "Leads all cities — highest spend"},
+          {"longitude": 152.5, "latitude": -33.2, "label": "boosted by international visitors"}
         ]
       },
-      "mark": {"type": "text", "align": "left", "fontSize": 10, "fontStyle": "italic", "color": "#D85A30"},
+      "mark": {"type": "text", "align": "left", "fontSize": 9.5, "fontStyle": "italic", "color": "#D85A30"},
       "encoding": {
         "longitude": {"field": "longitude", "type": "quantitative"},
         "latitude": {"field": "latitude", "type": "quantitative"},
@@ -92,11 +92,11 @@
     {
       "data": {
         "values": [
-          {"longitude": 119.0, "latitude": -23.0, "label": "Melbourne: similar trip volume to Sydney"},
-          {"longitude": 119.0, "latitude": -24.5, "label": "but lower total spend — fewer intl. visitors"}
+          {"longitude": 138.5, "latitude": -40.5, "label": "Similar trip volume to Sydney"},
+          {"longitude": 138.5, "latitude": -41.7, "label": "but lower spend — fewer intl. visitors"}
         ]
       },
-      "mark": {"type": "text", "align": "left", "fontSize": 10, "fontStyle": "italic", "color": "#555555"},
+      "mark": {"type": "text", "align": "left", "fontSize": 9.5, "fontStyle": "italic", "color": "#555555"},
       "encoding": {
         "longitude": {"field": "longitude", "type": "quantitative"},
         "latitude": {"field": "latitude", "type": "quantitative"},
@@ -106,11 +106,11 @@
     {
       "data": {
         "values": [
-          {"longitude": 119.0, "latitude": -27.0, "label": "Perth: geographic isolation limits"},
-          {"longitude": 119.0, "latitude": -28.5, "label": "visitor reach despite state size"}
+          {"longitude": 108.5, "latitude": -30.5, "label": "Geographic isolation"},
+          {"longitude": 108.5, "latitude": -31.7, "label": "limits visitor reach"}
         ]
       },
-      "mark": {"type": "text", "align": "left", "fontSize": 10, "fontStyle": "italic", "color": "#555555"},
+      "mark": {"type": "text", "align": "left", "fontSize": 9.5, "fontStyle": "italic", "color": "#555555"},
       "encoding": {
         "longitude": {"field": "longitude", "type": "quantitative"},
         "latitude": {"field": "latitude", "type": "quantitative"},
@@ -120,11 +120,11 @@
     {
       "data": {
         "values": [
-          {"longitude": 119.0, "latitude": -31.0, "label": "Darwin & Hobart: smallest capitals,"},
-          {"longitude": 119.0, "latitude": -32.5, "label": "smallest visitor spend nationally"}
+          {"longitude": 115.0, "latitude": -10.5, "label": "Smallest capitals,"},
+          {"longitude": 115.0, "latitude": -11.7, "label": "smallest visitor spend"}
         ]
       },
-      "mark": {"type": "text", "align": "left", "fontSize": 10, "fontStyle": "italic", "color": "#555555"},
+      "mark": {"type": "text", "align": "left", "fontSize": 9.5, "fontStyle": "italic", "color": "#555555"},
       "encoding": {
         "longitude": {"field": "longitude", "type": "quantitative"},
         "latitude": {"field": "latitude", "type": "quantitative"},
