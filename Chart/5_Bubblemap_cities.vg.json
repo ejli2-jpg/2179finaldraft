@@ -8,170 +8,73 @@
     "subtitleFontSize": 11,
     "subtitleColor": "#666"
   },
-  "width": 600,
-  "height": 500,
-  "projection": { "type": "mercator" },
+  "width": 700,
+  "height": 450,
+  "projection": {"type": "mercator", "center": [133, -28], "scale": 620},
   "layer": [
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
-        "format": { "type": "json", "property": "features" }
+        "url": "https://raw.githubusercontent.com/ejli2-jpg/2179finaldraft/refs/heads/main/Data/au-states-topo.json",
+        "format": {"type": "topojson", "feature": "states"}
       },
       "mark": {
         "type": "geoshape",
-        "fill": "#d8e8d0",
+        "fill": "#d6e8d6",
         "stroke": "#ffffff",
-        "strokeWidth": 1.5
+        "strokeWidth": 1.2
       }
     },
     {
       "data": {
-        "url": "Data/city_visitor_spend.csv"
+        "url": "https://raw.githubusercontent.com/ejli2-jpg/2179finaldraft/refs/heads/main/Data/spend_by_city.csv"
       },
       "mark": {
         "type": "circle",
         "opacity": 0.82,
+        "color": "#D85A30",
         "stroke": "#ffffff",
-        "strokeWidth": 1.5,
-        "color": "#D85A30"
+        "strokeWidth": 1.5
       },
       "encoding": {
-        "longitude": { "field": "longitude", "type": "quantitative" },
-        "latitude":  { "field": "latitude",  "type": "quantitative" },
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
         "size": {
           "field": "spend_billion_aud",
           "type": "quantitative",
           "title": "Spend ($B AUD)",
-          "scale": { "range": [80, 8000] },
+          "scale": {"range": [150, 3800]},
           "legend": {
-            "orient": "right",
+            "orient": "bottom-right",
             "titleFontSize": 11,
             "labelFontSize": 10,
-            "values": [0, 5, 10, 15, 20, 25, 30]
+            "title": "Spend ($B AUD)"
           }
         },
         "tooltip": [
-          { "field": "city",             "title": "City" },
-          { "field": "spend_billion_aud","title": "Visitor spend ($B AUD)", "format": ".1f" }
+          {"field": "city", "title": "City"},
+          {"field": "state", "title": "State"},
+          {"field": "spend_billion_aud", "title": "Domestic spend ($B AUD)", "format": ".2f"},
+          {"field": "trips_millions", "title": "Overnight trips (M)", "format": ".1f"}
         ]
       }
     },
     {
       "data": {
-        "url": "Data/city_visitor_spend.csv"
+        "url": "https://raw.githubusercontent.com/ejli2-jpg/2179finaldraft/refs/heads/main/Data/spend_by_city.csv"
       },
       "mark": {
         "type": "text",
-        "fontWeight": "bold",
+        "dy": -18,
         "fontSize": 11,
-        "color": "#1a1a1a",
-        "dy": -18
+        "fontWeight": "bold",
+        "color": "#222222"
       },
       "encoding": {
-        "longitude": { "field": "longitude", "type": "quantitative" },
-        "latitude":  { "field": "latitude",  "type": "quantitative" },
-        "text":      { "field": "city" }
-      }
-    },
-    {
-      "data": {
-        "values": [
-          {
-            "longitude": 151.8,
-            "latitude": -32.2,
-            "label": "Sydney leads all cities —\nhighest spend driven by\ninternational visitors"
-          }
-        ]
-      },
-      "mark": {
-        "type": "text",
-        "align": "left",
-        "fontSize": 10,
-        "fontStyle": "italic",
-        "color": "#D85A30",
-        "lineBreak": "\n"
-      },
-      "encoding": {
-        "longitude": { "field": "longitude", "type": "quantitative" },
-        "latitude":  { "field": "latitude",  "type": "quantitative" },
-        "text":      { "field": "label" }
-      }
-    },
-    {
-      "data": {
-        "values": [
-          {
-            "longitude": 146.5,
-            "latitude": -39.2,
-            "label": "Melbourne: high trip\nvolume but lower total\nspend than Sydney"
-          }
-        ]
-      },
-      "mark": {
-        "type": "text",
-        "align": "left",
-        "fontSize": 10,
-        "fontStyle": "italic",
-        "color": "#185FA5",
-        "lineBreak": "\n"
-      },
-      "encoding": {
-        "longitude": { "field": "longitude", "type": "quantitative" },
-        "latitude":  { "field": "latitude",  "type": "quantitative" },
-        "text":      { "field": "label" }
-      }
-    },
-    {
-      "data": {
-        "values": [
-          {
-            "longitude": 122.5,
-            "latitude": -32.5,
-            "label": "Perth isolated by\ndistance; smaller\nvisitor base"
-          }
-        ]
-      },
-      "mark": {
-        "type": "text",
-        "align": "left",
-        "fontSize": 10,
-        "fontStyle": "italic",
-        "color": "#666",
-        "lineBreak": "\n"
-      },
-      "encoding": {
-        "longitude": { "field": "longitude", "type": "quantitative" },
-        "latitude":  { "field": "latitude",  "type": "quantitative" },
-        "text":      { "field": "label" }
-      }
-    },
-    {
-      "data": {
-        "values": [
-          {
-            "longitude": 138.3,
-            "latitude": -26.8,
-            "label": "Darwin & Hobart:\nsmallest capitals,\nsmallest visitor spend"
-          }
-        ]
-      },
-      "mark": {
-        "type": "text",
-        "align": "left",
-        "fontSize": 10,
-        "fontStyle": "italic",
-        "color": "#666",
-        "lineBreak": "\n"
-      },
-      "encoding": {
-        "longitude": { "field": "longitude", "type": "quantitative" },
-        "latitude":  { "field": "latitude",  "type": "quantitative" },
-        "text":      { "field": "label" }
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "text": {"field": "city", "type": "nominal"}
       }
     }
   ],
-  "config": {
-    "view": { "stroke": null },
-    "axis": { "domain": false, "ticks": false }
-  }
+  "config": {"view": {"stroke": null}, "background": "#c9dde8"}
 }
