@@ -15,18 +15,23 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+      font-family: 'DM Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 300;
       background: #f5f4f0;
       color: #1a1a1a;
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
+    /* ── HERO ─────────────────────────────────────── */
     .hero {
       background: #0f1e2e;
       padding: 60px 48px 52px;
     }
 
     .hero-eyebrow {
+      font-family: 'DM Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
       font-size: 11px;
       font-weight: 600;
       letter-spacing: 1.8px;
@@ -47,6 +52,7 @@
     }
 
     .hero-body {
+      font-family: 'DM Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
       font-size: 17px;
       font-weight: 300;
       color: rgba(255,255,255,0.72);
@@ -56,6 +62,7 @@
     }
 
     .hero-method {
+      font-family: 'DM Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
       font-size: 12px;
       font-weight: 400;
       color: rgba(255,255,255,0.38);
@@ -90,12 +97,14 @@
     }
 
     .stat-label {
+      font-family: 'DM Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
       font-size: 12px;
       font-weight: 300;
       color: rgba(255,255,255,0.45);
       line-height: 1.45;
     }
 
+    /* ── BAND ─────────────────────────────────────── */
     .band {
       background: #0f1e2e;
       padding: 20px 48px;
@@ -113,6 +122,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      font-family: 'DM Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
       font-size: 13px;
       font-weight: 600;
       color: #fff;
@@ -129,6 +139,7 @@
     }
 
     .band-sub {
+      font-family: 'DM Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
       font-size: 13px;
       font-weight: 300;
       color: rgba(255,255,255,0.55);
@@ -136,6 +147,7 @@
       max-width: 820px;
     }
 
+    /* ── SECTION ──────────────────────────────────── */
     .section {
       background: #ffffff;
       padding: 40px 32px 32px;
@@ -145,6 +157,7 @@
     .section.last { padding-bottom: 52px; }
 
     .sec-eyebrow {
+      font-family: 'DM Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
       font-size: 10px;
       font-weight: 500;
       letter-spacing: 1.8px;
@@ -164,7 +177,9 @@
       padding-left: 14px;
     }
 
+    /* ── BODY COPY — same font, two sizes for hierarchy ── */
     .sec-body {
+      font-family: 'DM Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
       font-size: 16px;
       font-weight: 300;
       color: #4a4a4a;
@@ -175,21 +190,23 @@
 
     /* Chart intro — directs reader to chart below */
     .chart-intro {
+      font-family: 'DM Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
       font-size: 14px;
       font-weight: 300;
-      color: #5a5a5a;
-      line-height: 1.8;
+      color: #4a4a4a;
+      line-height: 1.85;
       max-width: none;
       margin-top: 24px;
       margin-bottom: 16px;
     }
 
-    /* Chart outro — interprets chart above, slightly smaller to signal supporting role */
+    /* Chart outro — interprets chart above */
     .chart-outro {
+      font-family: 'DM Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
       font-size: 13px;
       font-weight: 300;
-      color: #5a5a5a;
-      line-height: 1.8;
+      color: #4a4a4a;
+      line-height: 1.85;
       max-width: none;
       margin-top: 14px;
       margin-bottom: 20px;
@@ -197,6 +214,20 @@
       border-left: 2px solid #d8d4cc;
     }
 
+    /* Connector — italic narrative bridge */
+    .connector {
+      font-family: 'DM Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      font-style: italic;
+      color: #4a4a4a;
+      line-height: 1.85;
+      margin: 24px 0 8px;
+      border-top: 1px solid #ebe9e3;
+      padding-top: 20px;
+    }
+
+    /* ── CHART LAYOUT ─────────────────────────────── */
     .chart-full {
       background: transparent;
       margin-bottom: 8px;
@@ -221,6 +252,7 @@
     }
 
     .chart-title {
+      font-family: 'DM Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
       font-size: 12px;
       font-weight: 500;
       color: #1a1a1a;
@@ -228,6 +260,7 @@
     }
 
     .chart-sub {
+      font-family: 'DM Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
       font-size: 10px;
       font-weight: 300;
       color: #9e9b94;
@@ -240,6 +273,7 @@
       padding: 0;
     }
 
+    /* ── INSIGHT BOX ──────────────────────────────── */
     .insight-box {
       background: #fff8f5;
       border-left: 3px solid #D85A30;
@@ -250,6 +284,7 @@
     }
 
     .insight-label {
+      font-family: 'DM Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
       font-size: 10px;
       font-weight: 600;
       letter-spacing: 1.4px;
@@ -260,24 +295,14 @@
     }
 
     .insight-box p {
+      font-family: 'DM Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
       font-size: 13px;
       font-weight: 300;
       color: #333;
       line-height: 1.7;
     }
 
-    .connector {
-      font-size: 14px;
-      font-weight: 300;
-      font-style: italic;
-      color: #4a4a4a;
-      line-height: 1.85;
-      margin: 24px 0 8px;
-      border-top: 1px solid #ebe9e3;
-      padding-top: 20px;
-    }
-
-    /* World map + sidebar */
+    /* ── WORLD MAP + SIDEBAR ──────────────────────── */
     .map-with-sidebar {
       display: flex;
       flex-direction: row;
@@ -292,23 +317,11 @@
       display: inline-block;
     }
 
-    .map-main .vega-embed {
-      max-width: 100%;
-      display: block;
-    }
-
-    .map-main .vega-embed summary {
-      display: none;
-    }
-
+    .map-main .vega-embed { max-width: 100%; display: block; }
+    .map-main .vega-embed summary { display: none; }
     .map-main .vega-embed canvas,
-    .map-main .vega-embed svg {
-      display: block;
-    }
-
-    .map-main .vega-bind {
-      display: none;
-    }
+    .map-main .vega-embed svg { display: block; }
+    .map-main .vega-bind { display: none; }
 
     .map-sidebar {
       flex: 1;
@@ -329,6 +342,7 @@
       margin: 0;
     }
 
+    /* ── FOOTER ───────────────────────────────────── */
     .footer {
       background: #ffffff;
       border-top: 1px solid #e8e6e0;
@@ -338,8 +352,15 @@
       align-items: center;
     }
 
-    .footer span { font-size: 11px; font-weight: 300; color: #9e9b94; letter-spacing: 0.1px; }
+    .footer span {
+      font-family: 'DM Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
+      font-size: 11px;
+      font-weight: 300;
+      color: #9e9b94;
+      letter-spacing: 0.1px;
+    }
 
+    /* ── RESPONSIVE ───────────────────────────────── */
     @media (max-width: 900px) {
       .stats-grid, .chart-grid-2, .map-with-sidebar { grid-template-columns: 1fr; }
       .hero h1 { font-size: 30px; }
