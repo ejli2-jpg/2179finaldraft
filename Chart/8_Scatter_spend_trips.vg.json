@@ -6,7 +6,7 @@
     "anchor": "start", "fontSize": 15, "subtitleFontSize": 11, "subtitleColor": "#666"
   },
   "width": 700,
-  "height": 380,
+  "height": 500,
   "data": { "url": "Data/intl_visitors_all_countries_v2.csv" },
   "params": [
     {
