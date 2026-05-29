@@ -1,102 +1,86 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Domestic vs international visitor nights over time",
-    "subtitle": "Annual visitor nights (millions) | Source: TRA NVS + IVS",
+    "text": "Domestic visitor spend by capital city",
+    "subtitle": "Bubble size = total spend ($B AUD) | Source: TRA National Visitor Survey, Dec 2024",
     "anchor": "start",
     "fontSize": 15,
     "subtitleFontSize": 11,
     "subtitleColor": "#666"
   },
   "width": 600,
-  "height": 280,
-  "data": {
-    "url": "Data/visitor_nights_by_type.csv"
-  },
+  "height": 500,
+  "projection": { "type": "mercator" },
   "layer": [
     {
+      "data": {
+        "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
+        "format": { "type": "json", "property": "features" }
+      },
       "mark": {
-        "type": "area",
-        "opacity": 0.72,
-        "line": { "strokeWidth": 2 }
+        "type": "geoshape",
+        "fill": "#d8e8d0",
+        "stroke": "#ffffff",
+        "strokeWidth": 1.5
+      }
+    },
+    {
+      "data": {
+        "url": "Data/city_visitor_spend.csv"
+      },
+      "mark": {
+        "type": "circle",
+        "opacity": 0.82,
+        "stroke": "#ffffff",
+        "strokeWidth": 1.5,
+        "color": "#D85A30"
       },
       "encoding": {
-        "x": {
-          "field": "year",
-          "type": "temporal",
-          "title": "Year",
-          "axis": { "labelFontSize": 11, "format": "%Y" }
-        },
-        "y": {
-          "field": "nights_millions",
+        "longitude": { "field": "longitude", "type": "quantitative" },
+        "latitude":  { "field": "latitude",  "type": "quantitative" },
+        "size": {
+          "field": "spend_billion_aud",
           "type": "quantitative",
-          "title": "Visitor nights (millions)",
-          "stack": null,
-          "axis": {
+          "title": "Spend ($B AUD)",
+          "scale": { "range": [80, 8000] },
+          "legend": {
+            "orient": "right",
+            "titleFontSize": 11,
             "labelFontSize": 10,
-            "grid": true,
-            "gridDash": [3, 3],
-            "gridColor": "#e0e0e0"
+            "values": [0, 5, 10, 15, 20, 25, 30]
           }
         },
-        "color": {
-          "field": "visitor_type",
-          "type": "nominal",
-          "title": "Visitor type",
-          "scale": {
-            "domain": ["Domestic", "International"],
-            "range": ["#D85A30", "#185FA5"]
-          },
-          "legend": null
-        },
         "tooltip": [
-          { "field": "year", "title": "Year", "type": "temporal", "format": "%Y" },
-          { "field": "visitor_type", "title": "Type" },
-          { "field": "nights_millions", "title": "Visitor nights (M)", "format": ".1f" }
+          { "field": "city",             "title": "City" },
+          { "field": "spend_billion_aud","title": "Visitor spend ($B AUD)", "format": ".1f" }
         ]
       }
     },
     {
       "data": {
-        "values": [
-          { "x": "2020-03-01", "label": "Borders closed", "y": 420 },
-          { "x": "2022-02-01", "label": "Borders reopened", "y": 420 }
-        ]
+        "url": "Data/city_visitor_spend.csv"
       },
-      "layer": [
-        {
-          "mark": {
-            "type": "rule",
-            "strokeDash": [4, 3],
-            "strokeWidth": 1.5,
-            "color": "#888"
-          },
-          "encoding": {
-            "x": { "field": "x", "type": "temporal" }
-          }
-        },
-        {
-          "mark": {
-            "type": "text",
-            "align": "left",
-            "dx": 5,
-            "dy": 0,
-            "fontSize": 10,
-            "fontStyle": "italic",
-            "color": "#444"
-          },
-          "encoding": {
-            "x": { "field": "x", "type": "temporal" },
-            "y": { "field": "y", "type": "quantitative" },
-            "text": { "field": "label" }
-          }
-        }
-      ]
+      "mark": {
+        "type": "text",
+        "fontWeight": "bold",
+        "fontSize": 11,
+        "color": "#1a1a1a",
+        "dy": -18
+      },
+      "encoding": {
+        "longitude": { "field": "longitude", "type": "quantitative" },
+        "latitude":  { "field": "latitude",  "type": "quantitative" },
+        "text":      { "field": "city" }
+      }
     },
     {
       "data": {
         "values": [
-          { "x": "2016-06-01", "y": 455, "label": "▲ Pre-pandemic peak ~440M nights (2018)" }
+          {
+            "longitude": 151.8,
+            "latitude": -32.2,
+            "label": "Sydney leads all cities —\nhighest spend driven by\ninternational visitors"
+          }
         ]
       },
       "mark": {
@@ -104,40 +88,85 @@
         "align": "left",
         "fontSize": 10,
         "fontStyle": "italic",
-        "color": "#888"
+        "color": "#D85A30",
+        "lineBreak": "\n"
       },
       "encoding": {
-        "x": { "field": "x", "type": "temporal" },
-        "y": { "field": "y", "type": "quantitative" },
-        "text": { "field": "label" }
+        "longitude": { "field": "longitude", "type": "quantitative" },
+        "latitude":  { "field": "latitude",  "type": "quantitative" },
+        "text":      { "field": "label" }
       }
     },
     {
       "data": {
         "values": [
-          { "x": "2017-01-01", "y": 330, "label": "Domestic" },
-          { "x": "2017-01-01", "y": 110, "label": "International" }
+          {
+            "longitude": 146.5,
+            "latitude": -39.2,
+            "label": "Melbourne: high trip\nvolume but lower total\nspend than Sydney"
+          }
         ]
       },
       "mark": {
         "type": "text",
-        "fontSize": 12,
-        "fontWeight": "bold",
-        "align": "left"
+        "align": "left",
+        "fontSize": 10,
+        "fontStyle": "italic",
+        "color": "#185FA5",
+        "lineBreak": "\n"
       },
       "encoding": {
-        "x": { "field": "x", "type": "temporal" },
-        "y": { "field": "y", "type": "quantitative" },
-        "text": { "field": "label" },
-        "color": {
-          "field": "label",
-          "type": "nominal",
-          "scale": {
-            "domain": ["Domestic", "International"],
-            "range": ["#D85A30", "#185FA5"]
-          },
-          "legend": null
-        }
+        "longitude": { "field": "longitude", "type": "quantitative" },
+        "latitude":  { "field": "latitude",  "type": "quantitative" },
+        "text":      { "field": "label" }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "longitude": 122.5,
+            "latitude": -32.5,
+            "label": "Perth isolated by\ndistance; smaller\nvisitor base"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "fontSize": 10,
+        "fontStyle": "italic",
+        "color": "#666",
+        "lineBreak": "\n"
+      },
+      "encoding": {
+        "longitude": { "field": "longitude", "type": "quantitative" },
+        "latitude":  { "field": "latitude",  "type": "quantitative" },
+        "text":      { "field": "label" }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "longitude": 138.3,
+            "latitude": -26.8,
+            "label": "Darwin & Hobart:\nsmallest capitals,\nsmallest visitor spend"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "fontSize": 10,
+        "fontStyle": "italic",
+        "color": "#666",
+        "lineBreak": "\n"
+      },
+      "encoding": {
+        "longitude": { "field": "longitude", "type": "quantitative" },
+        "latitude":  { "field": "latitude",  "type": "quantitative" },
+        "text":      { "field": "label" }
       }
     }
   ],
