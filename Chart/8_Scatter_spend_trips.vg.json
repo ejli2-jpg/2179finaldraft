@@ -5,7 +5,7 @@
     "subtitle": "Bubble size = avg spend per trip | Use dropdown to filter by region | Source: TRA IVS, Dec 2024",
     "anchor": "start", "fontSize": 15, "subtitleFontSize": 11, "subtitleColor": "#666"
   },
-  "width": 600,
+  "width": 620,
   "height": 380,
   "data": { "url": "Data/intl_visitors_all_countries_v2.csv" },
   "params": [
