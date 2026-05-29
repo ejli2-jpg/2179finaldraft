@@ -173,35 +173,29 @@
       margin-bottom: 28px;
     }
 
-    /* Chart label — small uppercase tag anchoring text to chart */
-    .chart-label {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 1.6px;
-      text-transform: uppercase;
-      color: #9e9b94;
-      display: block;
-      margin-top: 20px;
-      margin-bottom: 6px;
-    }
-
-    /* Chart intro/outro — clear, readable, visually anchored */
-    .chart-intro,
-    .chart-outro {
-      font-size: 14px;
+    /* Chart intro — directs reader to chart below */
+    .chart-intro {
+      font-size: 15px;
       font-weight: 400;
-      color: #3a3a3a;
+      color: #2a2a2a;
       line-height: 1.8;
       max-width: none;
-      padding: 12px 16px;
-      background: #f9f8f6;
-      border-left: 3px solid #c8c4bc;
-      border-radius: 0 4px 4px 0;
+      margin-top: 24px;
       margin-bottom: 16px;
     }
 
-    .chart-intro { margin-top: 4px; }
-    .chart-outro { margin-top: 4px; }
+    /* Chart outro — interprets chart above, slightly smaller to signal supporting role */
+    .chart-outro {
+      font-size: 13px;
+      font-weight: 300;
+      color: #5a5a5a;
+      line-height: 1.8;
+      max-width: none;
+      margin-top: 14px;
+      margin-bottom: 20px;
+      padding-left: 18px;
+      border-left: 2px solid #d8d4cc;
+    }
 
     .chart-full {
       background: transparent;
@@ -424,8 +418,6 @@
       Although tourism activity has rebounded strongly since 2022, the pace of recovery differs considerably
       between states and international markets.
     </p>
-
-    <span class="chart-label">About the chart below</span>
     <p class="chart-intro">
       The chart below compares domestic and international visitor nights across each Australian state and territory.
       Each dot represents approximately one million visitor nights, making it easy to see both the scale and the
@@ -438,8 +430,6 @@
         <script>vegaEmbed('#visitor_stays', 'Chart/1_Visitor_stays.vg.json').catch(console.error);</script>
       </div>
     </div>
-
-    <span class="chart-label">Reading the chart above</span>
     <p class="chart-outro">
       The sheer volume gap between NSW and the rest of Australia is striking. While every state contributes to
       the national visitor economy, the eastern seaboard &mdash; and Sydney in particular &mdash; accounts for
@@ -452,8 +442,6 @@
       Sydney's role as the country's largest international gateway allows NSW to attract more visitor nights
       than any other state, reinforcing the concentration of tourism activity along Australia's eastern seaboard.</p>
     </div>
-
-    <span class="chart-label">About the charts below</span>
     <p class="chart-intro">
       To understand how this picture has changed over time, the two charts below trace the long-run trajectory
       of international arrivals and the total volume of visitor nights across both markets. The COVID-19 collapse
@@ -474,8 +462,6 @@
         </div>
       </div>
     </div>
-
-    <span class="chart-label">Reading the charts above</span>
     <p class="chart-outro">
       International arrivals fell to near zero in 2020 and remained suppressed through 2021, the longest
       continuous border closure in Australia's modern history. Domestic visitor nights also declined sharply,
@@ -523,8 +509,6 @@
       connections &mdash; such as South Australia, Tasmania, and the Northern Territory &mdash; attract
       fewer overnight visitors despite offering distinct natural and cultural experiences.
     </p>
-
-    <span class="chart-label">About the charts below</span>
     <p class="chart-intro">
       The maps below show two complementary views of Australia's tourism geography: domestic overnight trip
       volumes by state on the left, and total visitor spending by capital city on the right. Together they
@@ -545,8 +529,6 @@
         </div>
       </div>
     </div>
-
-    <span class="chart-label">Reading the charts above</span>
     <p class="chart-outro">
       The domestic trip map reflects population distribution &mdash; NSW, Victoria, and Queensland together
       account for the vast majority of overnight travel. But the spending map tells a more nuanced story.
@@ -607,13 +589,11 @@
         </div>
       </div>
       <div class="map-sidebar">
-        <span class="chart-label">About this map</span>
         <p class="chart-intro">
           The world map shows the geographic distribution of visitors to Australia using a logarithmic colour
           scale, making variation visible across both high- and low-volume markets. Use the region dropdown
           to zoom into specific parts of the world.
         </p>
-        <span class="chart-label">What the map shows</span>
         <p class="chart-outro">
           The Asia-Pacific region dominates, with New Zealand, China, the United Kingdom, the United States,
           and India accounting for the largest visitor flows. Europe contributes meaningful volumes through
@@ -630,8 +610,6 @@
         </div>
       </div>
     </div>
-
-    <span class="chart-label">About the charts below</span>
     <p class="chart-intro">
       The charts below break down the top ten visitor markets by total arrivals and compare each country's
       trip volume against its total spending. This comparison reveals which markets punch above their weight
@@ -652,8 +630,6 @@
         </div>
       </div>
     </div>
-
-    <span class="chart-label">Reading the charts above</span>
     <p class="chart-outro">
       The scatter plot is particularly revealing. Countries that sit above the trend line spend more relative
       to their trip volume &mdash; these are the high-value markets. China, despite its slower post-pandemic
@@ -702,8 +678,6 @@
       broad economic reach of Australia's visitor economy and its connections to industries that sit well
       beyond the traditional tourism sector.
     </p>
-
-    <span class="chart-label">About the charts below</span>
     <p class="chart-intro">
       The charts below examine how expenditure breaks down by travel purpose for both domestic and
       international visitors, and what activities international visitors most commonly engage in during
@@ -724,8 +698,6 @@
         </div>
       </div>
     </div>
-
-    <span class="chart-label">Reading the charts above</span>
     <p class="chart-outro">
       Holiday and leisure spending dominates both domestic and international totals, but education stands
       out as a disproportionately high-value category for international visitors. The activity hierarchy
@@ -742,8 +714,6 @@
       more than leisure tourists, making education one of Australia's most valuable tourism sectors on a
       per-visitor basis.</p>
     </div>
-
-    <span class="chart-label">About the chart below</span>
     <p class="chart-intro">
       The bar chart below ranks the specific activities that international visitors participate in most
       frequently. These participation rates matter not just for understanding visitor experience, but for
@@ -756,8 +726,6 @@
         <script>vegaEmbed('#bar_activities', 'Chart/15_bar_activities.vg.json').catch(console.error);</script>
       </div>
     </div>
-
-    <span class="chart-label">Reading the chart above</span>
     <p class="chart-outro">
       Eating out and visiting friends and relatives top the list, reinforcing that international tourism
       is as much a social and culinary experience as a sightseeing one. Nature tourism &mdash; visiting
@@ -799,8 +767,6 @@
       airlines, and tourism sectors benefit most over the coming decade. A recovery led by high-volume,
       lower-spend markets looks very different from one driven by the return of China's high-value visitors.
     </p>
-
-    <span class="chart-label">About the charts below</span>
     <p class="chart-intro">
       The heatmap on the left shows monthly arrival patterns across 2019 and 2022&ndash;2024, making it
       possible to see both the seasonality of Australian tourism and how quickly each year has approached
@@ -823,8 +789,6 @@
         </div>
       </div>
     </div>
-
-    <span class="chart-label">Reading the charts above</span>
     <p class="chart-outro">
       The seasonality heatmap shows that Australia's peak arrival months have remained consistent through
       the recovery &mdash; summer and the Christmas holiday period continue to drive the highest volumes.
@@ -841,8 +805,6 @@
       by strong growth in visiting friends and relatives travel, education, and an expanding middle class
       with increasing outbound travel demand.</p>
     </div>
-
-    <span class="chart-label">About the map below</span>
     <p class="chart-intro">
       Finally, the map below shows how each Australian state and territory has fared in recovering its
       international visitor base, expressed as a percentage of 2019 arrival levels. This geographic view
@@ -858,7 +820,6 @@
         </div>
       </div>
       <div class="map-sidebar">
-        <span class="chart-label">Reading the map</span>
         <p class="chart-outro">
           States with diversified international visitor bases &mdash; particularly those less dependent on
           Chinese arrivals &mdash; have recovered more completely. NSW and Victoria, as the primary entry
