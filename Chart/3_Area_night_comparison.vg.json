@@ -13,82 +13,143 @@
   "data": {
     "url": "Data/visitor_nights_by_type.csv"
   },
-  "mark": {
-    "type": "area",
-    "opacity": 0.72,
-    "line": {
-      "strokeWidth": 2
-    }
-  },
-  "encoding": {
-    "x": {
-      "field": "year",
-      "type": "temporal",
-      "title": "Year",
-      "axis": {
-        "labelFontSize": 11,
-        "format": "%Y"
+  "layer": [
+    {
+      "mark": {
+        "type": "area",
+        "opacity": 0.72,
+        "line": { "strokeWidth": 2 }
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal",
+          "title": "Year",
+          "axis": { "labelFontSize": 11, "format": "%Y" }
+        },
+        "y": {
+          "field": "nights_millions",
+          "type": "quantitative",
+          "title": "Visitor nights (millions)",
+          "stack": null,
+          "axis": {
+            "labelFontSize": 10,
+            "grid": true,
+            "gridDash": [3, 3],
+            "gridColor": "
+#e0e0e0"
+          }
+        },
+        "color": {
+          "field": "visitor_type",
+          "type": "nominal",
+          "title": "Visitor type",
+          "scale": {
+            "domain": ["Domestic", "International"],
+            "range": ["
+#D85A30", "
+#185FA5"]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          { "field": "year", "title": "Year", "type": "temporal", "format": "%Y" },
+          { "field": "visitor_type", "title": "Type" },
+          { "field": "nights_millions", "title": "Visitor nights (M)", "format": ".1f" }
+        ]
       }
     },
-    "y": {
-      "field": "nights_millions",
-      "type": "quantitative",
-      "title": "Visitor nights (millions)",
-      "stack": null,
-      "axis": {
-        "labelFontSize": 10,
-        "grid": true,
-        "gridDash": [
-          3,
-          3
-        ],
-        "gridColor": "#e0e0e0"
-      }
-    },
-    "color": {
-      "field": "visitor_type",
-      "type": "nominal",
-      "title": "Visitor type",
-      "scale": {
-        "domain": [
-          "Domestic",
-          "International"
-        ],
-        "range": [
-          "#D85A30",
-          "#185FA5"
+    {
+      "data": {
+        "values": [
+          { "x": "2020-03-01", "label": "Borders closed", "y": 420 },
+          { "x": "2022-02-01", "label": "Borders reopened", "y": 420 }
         ]
       },
-      "legend": {
-        "orient": "top-right",
-        "labelFontSize": 11
+      "layer": [
+        {
+          "mark": {
+            "type": "rule",
+            "strokeDash": [4, 3],
+            "strokeWidth": 1.5,
+            "color": "#888"
+          },
+          "encoding": {
+            "x": { "field": "x", "type": "temporal" }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": 5,
+            "dy": 0,
+            "fontSize": 10,
+            "fontStyle": "italic",
+            "color": "#444"
+          },
+          "encoding": {
+            "x": { "field": "x", "type": "temporal" },
+            "y": { "field": "y", "type": "quantitative" },
+            "text": { "field": "label" }
+          }
+        }
+      ]
+    },
+    {
+      "data": {
+        "values": [
+          { "x": "2016-06-01", "y": 455, "label": "▲ Pre-pandemic peak ~440M nights (2018)" }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "fontSize": 10,
+        "fontStyle": "italic",
+        "color": "#888"
+      },
+      "encoding": {
+        "x": { "field": "x", "type": "temporal" },
+        "y": { "field": "y", "type": "quantitative" },
+        "text": { "field": "label" }
       }
     },
-    "tooltip": [
-      {
-        "field": "year",
-        "title": "Year",
-        "type": "temporal",
-        "format": "%Y"
+    {
+      "data": {
+        "values": [
+          { "x": "2017-01-01", "y": 330, "label": "Domestic" },
+          { "x": "2017-01-01", "y": 110, "label": "International" }
+        ]
       },
-      {
-        "field": "visitor_type",
-        "title": "Type"
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "align": "left"
       },
-      {
-        "field": "nights_millions",
-        "title": "Visitor nights (M)",
-        "format": ".1f"
+      "encoding": {
+        "x": { "field": "x", "type": "temporal" },
+        "y": { "field": "y", "type": "quantitative" },
+        "text": { "field": "label" },
+        "color": {
+          "field": "label",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Domestic", "International"],
+            "range": ["
+#D85A30", "
+#185FA5"]
+          },
+          "legend": null
+        }
       }
-    ]
-  },
-  "config": {
-    "view": {
-      "stroke": null
-    },
-    "axis": {
-      "domain": false,
-      "ticks": false
     }
+  ],
+  "config": {
+    "view": { "stroke": null },
+    "axis": { "domain": false, "ticks": false }
   }
 }
+
+
