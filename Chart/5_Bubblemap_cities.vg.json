@@ -74,6 +74,66 @@
         "latitude": {"field": "latitude", "type": "quantitative"},
         "text": {"field": "city", "type": "nominal"}
       }
+    },
+    {
+      "data": {
+        "values": [
+          {"longitude": 152.4, "latitude": -31.6, "label": "Sydney & Melbourne dominate —"},
+          {"longitude": 152.4, "latitude": -32.4, "label": "together ~55% of national spend"}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "fontSize": 10,
+        "fontStyle": "italic",
+        "color": "#D85A30"
+      },
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "text": {"field": "label"}
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"longitude": 108.5, "latitude": -24.0, "label": "Darwin & Perth: geographically"},
+          {"longitude": 108.5, "latitude": -25.2, "label": "isolated; smaller visitor base"}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "fontSize": 10,
+        "fontStyle": "italic",
+        "color": "#555555"
+      },
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "text": {"field": "label"}
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"longitude": 122.0, "latitude": -36.8, "label": "Adelaide & Hobart: mid-sized"},
+          {"longitude": 122.0, "latitude": -38.0, "label": "spend; limited intl. gateways"}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "fontSize": 10,
+        "fontStyle": "italic",
+        "color": "#555555"
+      },
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "text": {"field": "label"}
+      }
     }
   ],
   "config": {"view": {"stroke": null}, "background": "#c9dde8"}
