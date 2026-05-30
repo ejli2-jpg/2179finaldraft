@@ -3,7 +3,7 @@
   "description": "Hierarchical tree of visitor activities",
   "width": 600,
   "height": 500,
-  "padding": { "left": 10, "right": 200, "top": 60, "bottom": 20 },
+  "padding": { "left": 10, "right": 260, "top": 60, "bottom": 20 },
   "title": {
     "text": "What international visitors do in Australia",
     "subtitle": "Participation rate by activity category | Source: TRA IVS, Dec 2024",
@@ -105,9 +105,9 @@
       "type": "rect",
       "encode": {
         "enter": {
-          "x":            { "value": 420 },
-          "y":            { "value": 360 },
-          "width":        { "value": 220 },
+          "x":            { "value": 615 },
+          "y":            { "value": 160 },
+          "width":        { "value": 230 },
           "height":       { "value": 145 },
           "fill":         { "value": "#f9f8f6" },
           "stroke":       { "value": "#e0ddd8" },
@@ -120,8 +120,8 @@
       "type": "text",
       "encode": {
         "enter": {
-          "x":          { "value": 430 },
-          "y":          { "value": 375 },
+          "x":          { "value": 625 },
+          "y":          { "value": 177 },
           "text":       { "value": "Key insights" },
           "fontSize":   { "value": 10 },
           "fontWeight": { "value": "bold" },
@@ -133,9 +133,9 @@
       "type": "rule",
       "encode": {
         "enter": {
-          "x":           { "value": 430 },
-          "x2":          { "value": 630 },
-          "y":           { "value": 383 },
+          "x":           { "value": 625 },
+          "x2":          { "value": 835 },
+          "y":           { "value": 185 },
           "stroke":      { "value": "#e0ddd8" },
           "strokeWidth": { "value": 1 }
         }
@@ -145,8 +145,8 @@
       "type": "symbol",
       "encode": {
         "enter": {
-          "x":    { "value": 438 },
-          "y":    { "value": 397 },
+          "x":    { "value": 633 },
+          "y":    { "value": 200 },
           "size": { "value": 60 },
           "fill": { "value": "#D85A30" },
           "shape": { "value": "circle" }
@@ -157,8 +157,8 @@
       "type": "text",
       "encode": {
         "enter": {
-          "x":          { "value": 450 },
-          "y":          { "value": 393 },
+          "x":          { "value": 645 },
+          "y":          { "value": 196 },
           "text":       { "value": "Restaurants: 71% participation" },
           "fontSize":   { "value": 9.5 },
           "fontWeight": { "value": "bold" },
@@ -171,8 +171,8 @@
       "type": "text",
       "encode": {
         "enter": {
-          "x":         { "value": 450 },
-          "y":         { "value": 407 },
+          "x":         { "value": 645 },
+          "y":         { "value": 210 },
           "text":      { "value": "Most common activity overall" },
           "fontSize":  { "value": 9 },
           "fontStyle": { "value": "italic" },
@@ -185,8 +185,8 @@
       "type": "symbol",
       "encode": {
         "enter": {
-          "x":    { "value": 438 },
-          "y":    { "value": 428 },
+          "x":    { "value": 633 },
+          "y":    { "value": 232 },
           "size": { "value": 60 },
           "fill": { "value": "#1D9E75" },
           "shape": { "value": "circle" }
@@ -197,8 +197,8 @@
       "type": "text",
       "encode": {
         "enter": {
-          "x":          { "value": 450 },
-          "y":          { "value": 424 },
+          "x":          { "value": 645 },
+          "y":          { "value": 228 },
           "text":       { "value": "Beach: 42% — top nature activity" },
           "fontSize":   { "value": 9.5 },
           "fontWeight": { "value": "bold" },
@@ -211,8 +211,8 @@
       "type": "text",
       "encode": {
         "enter": {
-          "x":         { "value": 450 },
-          "y":         { "value": 438 },
+          "x":         { "value": 645 },
+          "y":         { "value": 242 },
           "text":      { "value": "Australia's natural brand drives visits" },
           "fontSize":  { "value": 9 },
           "fontStyle": { "value": "italic" },
@@ -225,8 +225,8 @@
       "type": "symbol",
       "encode": {
         "enter": {
-          "x":    { "value": 438 },
-          "y":    { "value": 460 },
+          "x":    { "value": 633 },
+          "y":    { "value": 264 },
           "size": { "value": 60 },
           "fill": { "value": "#185FA5" },
           "shape": { "value": "circle" }
@@ -237,8 +237,8 @@
       "type": "text",
       "encode": {
         "enter": {
-          "x":          { "value": 450 },
-          "y":          { "value": 456 },
+          "x":          { "value": 645 },
+          "y":          { "value": 260 },
           "text":       { "value": "Shopping malls: 65% participation" },
           "fontSize":   { "value": 9.5 },
           "fontWeight": { "value": "bold" },
@@ -251,8 +251,8 @@
       "type": "text",
       "encode": {
         "enter": {
-          "x":         { "value": 450 },
-          "y":         { "value": 470 },
+          "x":         { "value": 645 },
+          "y":         { "value": 274 },
           "text":      { "value": "Retail a major driver of visitor spend" },
           "fontSize":  { "value": 9 },
           "fontStyle": { "value": "italic" },
