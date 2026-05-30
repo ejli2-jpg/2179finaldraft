@@ -1,21 +1,25 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "Hierarchical tree of visitor activities: root → category → individual activity. Leaf node size = % participation.",
+  "description": "Hierarchical tree of visitor activities",
   "width": 600,
   "height": 420,
-  "padding": { "left": 10, "right": 200, "top": 10, "bottom": 10 },
-
+  "padding": { "left": 10, "right": 200, "top": 60, "bottom": 10 },
+  "title": {
+    "text": "What international visitors do in Australia",
+    "subtitle": "Participation rate by activity category | Source: TRA IVS, Dec 2024",
+    "anchor": "start",
+    "fontSize": 15,
+    "subtitleFontSize": 11,
+    "subtitleColor": "#666",
+    "offset": 12
+  },
   "data": [
     {
       "name": "tree",
       "url": "Data/visitor_activities_tree.csv",
       "format": { "type": "csv" },
       "transform": [
-        {
-          "type": "stratify",
-          "key": "id",
-          "parentKey": "parent"
-        },
+        { "type": "stratify", "key": "id", "parentKey": "parent" },
         {
           "type": "tree",
           "method": "tidy",
@@ -30,15 +34,10 @@
       "source": "tree",
       "transform": [
         { "type": "treelinks" },
-        {
-          "type": "linkpath",
-          "orient": "horizontal",
-          "shape": "diagonal"
-        }
+        { "type": "linkpath", "orient": "horizontal", "shape": "diagonal" }
       ]
     }
   ],
-
   "scales": [
     {
       "name": "color",
@@ -53,7 +52,6 @@
       "range": [30, 280]
     }
   ],
-
   "marks": [
     {
       "type": "path",
@@ -100,6 +98,118 @@
           "text":     { "signal": "datum.children ? datum.name : datum.name + ' (' + datum.participation_pct + '%)'" },
           "fontSize": { "value": 10 },
           "fill":     { "value": "#333333" }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x":        { "value": 420 },
+          "y":        { "value": 30 },
+          "text":     { "value": "★ Top activity" },
+          "fontSize": { "value": 10 },
+          "fontWeight": { "value": "bold" },
+          "fill":     { "value": "#D85A30" },
+          "align":    { "value": "left" }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x":        { "value": 420 },
+          "y":        { "value": 44 },
+          "text":     { "value": "Restaurants: 71% of all" },
+          "fontSize": { "value": 9.5 },
+          "fontStyle": { "value": "italic" },
+          "fill":     { "value": "#666" },
+          "align":    { "value": "left" }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x":        { "value": 420 },
+          "y":        { "value": 57 },
+          "text":     { "value": "international visitors dine out" },
+          "fontSize": { "value": 9.5 },
+          "fontStyle": { "value": "italic" },
+          "fill":     { "value": "#666" },
+          "align":    { "value": "left" }
+        }
+      }
+    },
+    {
+      "type": "rule",
+      "encode": {
+        "enter": {
+          "x":            { "value": 415 },
+          "y":            { "value": 30 },
+          "x2":           { "value": 415 },
+          "y2":           { "value": 57 },
+          "stroke":       { "value": "#D85A30" },
+          "strokeWidth":  { "value": 1 },
+          "strokeDash":   { "value": [3, 2] }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x":        { "value": 420 },
+          "y":        { "value": 340 },
+          "text":     { "value": "★ Strongest nature draw" },
+          "fontSize": { "value": 10 },
+          "fontWeight": { "value": "bold" },
+          "fill":     { "value": "#1D9E75" },
+          "align":    { "value": "left" }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x":        { "value": 420 },
+          "y":        { "value": 354 },
+          "text":     { "value": "Beach visits: 42% — Australia's" },
+          "fontSize": { "value": 9.5 },
+          "fontStyle": { "value": "italic" },
+          "fill":     { "value": "#666" },
+          "align":    { "value": "left" }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x":        { "value": 420 },
+          "y":        { "value": 367 },
+          "text":     { "value": "natural brand drives tourism" },
+          "fontSize": { "value": 9.5 },
+          "fontStyle": { "value": "italic" },
+          "fill":     { "value": "#666" },
+          "align":    { "value": "left" }
+        }
+      }
+    },
+    {
+      "type": "rule",
+      "encode": {
+        "enter": {
+          "x":            { "value": 415 },
+          "y":            { "value": 340 },
+          "x2":           { "value": 415 },
+          "y2":           { "value": 367 },
+          "stroke":       { "value": "#1D9E75" },
+          "strokeWidth":  { "value": 1 },
+          "strokeDash":   { "value": [3, 2] }
         }
       }
     }
