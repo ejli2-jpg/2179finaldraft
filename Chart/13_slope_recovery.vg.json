@@ -38,7 +38,7 @@
           "title": "Recovery vs 2019",
           "scale": {
             "domain": ["Above 2019", "Below 2019"],
-            "range":  ["#639922", "#E24B4A"]
+            "range":  ["#1D9E75", "#D85A30"]
           },
           "legend": { "orient": "bottom", "titleFontSize": 11, "labelFontSize": 11 }
         }
@@ -53,7 +53,7 @@
           "field": "recovery_status", "type": "nominal",
           "scale": {
             "domain": ["Above 2019", "Below 2019"],
-            "range":  ["#639922", "#E24B4A"]
+            "range":  ["#1D9E75", "#D85A30"]
           }
         },
         "tooltip": [
@@ -75,9 +75,49 @@
           "field": "recovery_status", "type": "nominal",
           "scale": {
             "domain": ["Above 2019", "Below 2019"],
-            "range":  ["#3B6D11", "#A32D2D"]
+            "range":  ["#1D9E75", "#D85A30"]
           }
         }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          { "year_label": "2019", "trips": 1560 }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -8,
+        "fontSize": 9,
+        "fontStyle": "italic",
+        "color": "#D85A30"
+      },
+      "encoding": {
+        "x": { "field": "year_label", "type": "ordinal" },
+        "y": { "field": "trips", "type": "quantitative" },
+        "text": { "value": "China was #1 market in 2019" }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          { "year_label": "2024", "trips": 520 }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 8,
+        "fontSize": 9,
+        "fontStyle": "italic",
+        "color": "#1D9E75"
+      },
+      "encoding": {
+        "x": { "field": "year_label", "type": "ordinal" },
+        "y": { "field": "trips", "type": "quantitative" },
+        "text": { "value": "India exceeded 2019 levels" }
       }
     }
   ],
