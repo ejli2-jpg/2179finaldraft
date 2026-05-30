@@ -8,37 +8,141 @@
   "width": 1100,
   "height": 360,
   "data": { "url": "Data/visitor_activities.csv" },
-  "mark": { "type": "bar", "cornerRadiusEnd": 4 },
-  "encoding": {
-    "y": {
-      "field": "activity", "type": "nominal",
-      "sort": "-x",
-      "title": null,
-      "axis": { "labelFontSize": 11 }
-    },
-    "x": {
-      "field": "participation_pct", "type": "quantitative",
-      "title": "% of international visitors",
-      "axis": {
-        "labelFontSize": 10,
-        "grid": true, "gridDash": [3,3], "gridColor": "#e0e0e0",
-        "format": ".0f"
+  "layer": [
+    {
+      "mark": { "type": "bar", "cornerRadiusEnd": 4 },
+      "encoding": {
+        "y": {
+          "field": "activity", "type": "nominal",
+          "sort": "-x",
+          "title": null,
+          "axis": { "labelFontSize": 11 }
+        },
+        "x": {
+          "field": "participation_pct", "type": "quantitative",
+          "title": "% of international visitors",
+          "axis": {
+            "labelFontSize": 10,
+            "grid": true, "gridDash": [3,3], "gridColor": "#e0e0e0",
+            "format": ".0f"
+          }
+        },
+        "color": {
+          "field": "category", "type": "nominal",
+          "title": "Category",
+          "scale": {
+            "domain": ["Nature & Outdoors", "Food & Drink", "Culture & Heritage", "Shopping & Entertainment", "Sport & Adventure"],
+            "range":  ["#1D9E75", "#D85A30", "#7F77DD", "#185FA5", "#BA7517"]
+          },
+          "legend": { "orient": "bottom", "titleFontSize": 11, "labelFontSize": 11, "columns": 3 }
+        },
+        "tooltip": [
+          { "field": "activity",          "title": "Activity" },
+          { "field": "category",          "title": "Category" },
+          { "field": "participation_pct", "title": "% of visitors", "format": ".1f" }
+        ]
       }
     },
-    "color": {
-      "field": "category", "type": "nominal",
-      "title": "Category",
-      "scale": {
-        "domain": ["Nature & Outdoors", "Food & Drink", "Culture & Heritage", "Shopping & Entertainment", "Sport & Adventure"],
-        "range":  ["#1D9E75",           "#D85A30",     "#7F77DD",            "#185FA5",                  "#BA7517"]
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 4,
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "color": "#D85A30"
       },
-      "legend": { "orient": "bottom", "titleFontSize": 11, "labelFontSize": 11, "columns": 3 }
+      "encoding": {
+        "y": {
+          "field": "activity", "type": "nominal", "sort": "-x"
+        },
+        "x": {
+          "field": "participation_pct", "type": "quantitative"
+        },
+        "text": {
+          "condition": {
+            "test": "datum.activity === 'Eat out at restaurants'",
+            "value": "71% — most common activity by far"
+          },
+          "value": ""
+        }
+      }
     },
-    "tooltip": [
-      { "field": "activity",         "title": "Activity" },
-      { "field": "category",         "title": "Category" },
-      { "field": "participation_pct","title": "% of visitors", "format": ".1f" }
-    ]
-  },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 4,
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "color": "#185FA5"
+      },
+      "encoding": {
+        "y": {
+          "field": "activity", "type": "nominal", "sort": "-x"
+        },
+        "x": {
+          "field": "participation_pct", "type": "quantitative"
+        },
+        "text": {
+          "condition": {
+            "test": "datum.activity === 'Go shopping'",
+            "value": "65% — retail a major driver of visitor spend"
+          },
+          "value": ""
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 4,
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "color": "#1D9E75"
+      },
+      "encoding": {
+        "y": {
+          "field": "activity", "type": "nominal", "sort": "-x"
+        },
+        "x": {
+          "field": "participation_pct", "type": "quantitative"
+        },
+        "text": {
+          "condition": {
+            "test": "datum.activity === 'Go to the beach'",
+            "value": "42% — Australia's natural brand in action"
+          },
+          "value": ""
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 4,
+        "fontSize": 10,
+        "fontStyle": "italic",
+        "color": "#666"
+      },
+      "encoding": {
+        "y": {
+          "field": "activity", "type": "nominal", "sort": "-x"
+        },
+        "x": {
+          "field": "participation_pct", "type": "quantitative"
+        },
+        "text": {
+          "condition": {
+            "test": "datum.activity === 'Visit friends/relatives at home'",
+            "value": "46% — VFR travel underpins volume"
+          },
+          "value": ""
+        }
+      }
+    }
+  ],
   "config": { "view": { "stroke": null }, "axis": { "domain": false, "ticks": false } }
 }
