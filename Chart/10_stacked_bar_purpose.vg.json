@@ -5,7 +5,7 @@
     "subtitle": "Spend in Australia ($M AUD) | Source: TRA NVS + IVS, Dec 2024",
     "anchor": "start", "fontSize": 15, "subtitleFontSize": 11, "subtitleColor": "#666"
   },
-  "width": 600,
+  "width": 800,
   "height": 320,
   "data": { "url": "Data/expenditure_by_purpose.csv" },
   "layer": [
