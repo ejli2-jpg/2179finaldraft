@@ -3,7 +3,7 @@
   "description": "Hierarchical tree of visitor activities",
   "width": 600,
   "height": 500,
-  "padding": { "left": 10, "right": 200, "top": 60, "bottom": 10 },
+  "padding": { "left": 10, "right": 200, "top": 60, "bottom": 20 },
   "title": {
     "text": "What international visitors do in Australia",
     "subtitle": "Participation rate by activity category | Source: TRA IVS, Dec 2024",
@@ -105,10 +105,10 @@
       "type": "rect",
       "encode": {
         "enter": {
-          "x":            { "value": 10 },
-          "y":            { "value": 340 },
-          "width":        { "value": 210 },
-          "height":       { "value": 140 },
+          "x":            { "value": 420 },
+          "y":            { "value": 360 },
+          "width":        { "value": 220 },
+          "height":       { "value": 145 },
           "fill":         { "value": "#f9f8f6" },
           "stroke":       { "value": "#e0ddd8" },
           "strokeWidth":  { "value": 1 },
@@ -120,8 +120,8 @@
       "type": "text",
       "encode": {
         "enter": {
-          "x":          { "value": 20 },
-          "y":          { "value": 358 },
+          "x":          { "value": 430 },
+          "y":          { "value": 375 },
           "text":       { "value": "Key insights" },
           "fontSize":   { "value": 10 },
           "fontWeight": { "value": "bold" },
@@ -133,9 +133,9 @@
       "type": "rule",
       "encode": {
         "enter": {
-          "x":           { "value": 20 },
-          "x2":          { "value": 210 },
-          "y":           { "value": 366 },
+          "x":           { "value": 430 },
+          "x2":          { "value": 630 },
+          "y":           { "value": 383 },
           "stroke":      { "value": "#e0ddd8" },
           "strokeWidth": { "value": 1 }
         }
@@ -145,8 +145,8 @@
       "type": "symbol",
       "encode": {
         "enter": {
-          "x":    { "value": 28 },
-          "y":    { "value": 382 },
+          "x":    { "value": 438 },
+          "y":    { "value": 397 },
           "size": { "value": 60 },
           "fill": { "value": "#D85A30" },
           "shape": { "value": "circle" }
@@ -157,8 +157,8 @@
       "type": "text",
       "encode": {
         "enter": {
-          "x":          { "value": 40 },
-          "y":          { "value": 378 },
+          "x":          { "value": 450 },
+          "y":          { "value": 393 },
           "text":       { "value": "Restaurants: 71% participation" },
           "fontSize":   { "value": 9.5 },
           "fontWeight": { "value": "bold" },
@@ -171,13 +171,13 @@
       "type": "text",
       "encode": {
         "enter": {
-          "x":        { "value": 40 },
-          "y":        { "value": 392 },
-          "text":     { "value": "Most common activity overall" },
-          "fontSize": { "value": 9 },
+          "x":         { "value": 450 },
+          "y":         { "value": 407 },
+          "text":      { "value": "Most common activity overall" },
+          "fontSize":  { "value": 9 },
           "fontStyle": { "value": "italic" },
-          "fill":     { "value": "#666" },
-          "baseline": { "value": "top" }
+          "fill":      { "value": "#666" },
+          "baseline":  { "value": "top" }
         }
       }
     },
@@ -185,8 +185,8 @@
       "type": "symbol",
       "encode": {
         "enter": {
-          "x":    { "value": 28 },
-          "y":    { "value": 415 },
+          "x":    { "value": 438 },
+          "y":    { "value": 428 },
           "size": { "value": 60 },
           "fill": { "value": "#1D9E75" },
           "shape": { "value": "circle" }
@@ -197,8 +197,8 @@
       "type": "text",
       "encode": {
         "enter": {
-          "x":          { "value": 40 },
-          "y":          { "value": 411 },
+          "x":          { "value": 450 },
+          "y":          { "value": 424 },
           "text":       { "value": "Beach: 42% — top nature activity" },
           "fontSize":   { "value": 9.5 },
           "fontWeight": { "value": "bold" },
@@ -211,13 +211,13 @@
       "type": "text",
       "encode": {
         "enter": {
-          "x":        { "value": 40 },
-          "y":        { "value": 425 },
-          "text":     { "value": "Australia's natural brand drives visits" },
-          "fontSize": { "value": 9 },
+          "x":         { "value": 450 },
+          "y":         { "value": 438 },
+          "text":      { "value": "Australia's natural brand drives visits" },
+          "fontSize":  { "value": 9 },
           "fontStyle": { "value": "italic" },
-          "fill":     { "value": "#666" },
-          "baseline": { "value": "top" }
+          "fill":      { "value": "#666" },
+          "baseline":  { "value": "top" }
         }
       }
     },
@@ -225,8 +225,8 @@
       "type": "symbol",
       "encode": {
         "enter": {
-          "x":    { "value": 28 },
-          "y":    { "value": 450 },
+          "x":    { "value": 438 },
+          "y":    { "value": 460 },
           "size": { "value": 60 },
           "fill": { "value": "#185FA5" },
           "shape": { "value": "circle" }
@@ -237,8 +237,8 @@
       "type": "text",
       "encode": {
         "enter": {
-          "x":          { "value": 40 },
-          "y":          { "value": 446 },
+          "x":          { "value": 450 },
+          "y":          { "value": 456 },
           "text":       { "value": "Shopping malls: 65% participation" },
           "fontSize":   { "value": 9.5 },
           "fontWeight": { "value": "bold" },
@@ -251,13 +251,13 @@
       "type": "text",
       "encode": {
         "enter": {
-          "x":        { "value": 40 },
-          "y":        { "value": 460 },
-          "text":     { "value": "Retail a major driver of visitor spend" },
-          "fontSize": { "value": 9 },
+          "x":         { "value": 450 },
+          "y":         { "value": 470 },
+          "text":      { "value": "Retail a major driver of visitor spend" },
+          "fontSize":  { "value": 9 },
           "fontStyle": { "value": "italic" },
-          "fill":     { "value": "#666" },
-          "baseline": { "value": "top" }
+          "fill":      { "value": "#666" },
+          "baseline":  { "value": "top" }
         }
       }
     }
