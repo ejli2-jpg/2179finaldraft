@@ -10,7 +10,7 @@
   "data": { "url": "Data/monthly_arrivals.csv" },
   "layer": [
     {
-      "mark": { "type": "rect", "cornerRadius": 2 },
+      "mark": { "type": "rect" },
       "encoding": {
         "x": {
           "field": "year", "type": "ordinal",
@@ -49,9 +49,7 @@
         "baseline": "middle"
       },
       "transform": [
-        {
-          "filter": "(datum.month === 'Dec' || datum.month === 'Mar') && datum.year === '2024'"
-        }
+        { "filter": "(datum.month === 'Dec' || datum.month === 'Mar') && datum.year === '2024'" }
       ],
       "encoding": {
         "x": { "field": "year", "type": "ordinal" },
@@ -92,7 +90,7 @@
     {
       "data": {
         "values": [
-          { "year": "2022", "month": "Jan", "label": "Borders reopened\nFeb 2022" }
+          { "year": "2022", "month": "Feb", "label": "Borders reopened Feb 2022" }
         ]
       },
       "mark": {
@@ -100,9 +98,8 @@
         "fontSize": 9,
         "fontStyle": "italic",
         "color": "#333",
-        "align": "left",
-        "dx": 8,
-        "dy": -6
+        "align": "center",
+        "baseline": "middle"
       },
       "encoding": {
         "x": { "field": "year", "type": "ordinal" },
@@ -116,16 +113,16 @@
     {
       "data": {
         "values": [
-          { "year": "2024", "month": "May", "label": "2024 intensity\nmatches 2019" }
+          { "year": "2024", "month": "May", "label": "2024 matches 2019" }
         ]
       },
       "mark": {
         "type": "text",
         "fontSize": 9,
         "fontStyle": "italic",
-        "color": "#333",
-        "align": "left",
-        "dx": 8
+        "color": "#fff",
+        "align": "center",
+        "baseline": "middle"
       },
       "encoding": {
         "x": { "field": "year", "type": "ordinal" },
@@ -138,7 +135,7 @@
     }
   ],
   "config": {
-    "view": { "stroke": null, "step": 18 },
+    "view": { "stroke": null },
     "axis": { "domain": false, "ticks": false }
   }
 }
