@@ -78,7 +78,7 @@
         "dy": -120,
         "fontSize": 10,
         "fontStyle": "italic",
-        "color": "#555"
+        "color": "#222222"
       },
       "encoding": {
         "x": { "field": "x", "type": "quantitative" },
