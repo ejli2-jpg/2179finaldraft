@@ -8,31 +8,135 @@
   "width": 560,
   "height": 460,
   "data": { "url": "Data/monthly_arrivals.csv" },
-  "mark": { "type": "rect", "cornerRadius": 2 },
-  "encoding": {
-    "x": {
-      "field": "year", "type": "ordinal",
-      "title": "Year",
-      "axis": { "labelFontSize": 11, "labelAngle": -30 }
+  "layer": [
+    {
+      "mark": { "type": "rect", "cornerRadius": 2 },
+      "encoding": {
+        "x": {
+          "field": "year", "type": "ordinal",
+          "title": "Year",
+          "axis": { "labelFontSize": 11, "labelAngle": -30 }
+        },
+        "y": {
+          "field": "month", "type": "ordinal",
+          "title": null,
+          "sort": ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+          "axis": { "labelFontSize": 11 }
+        },
+        "color": {
+          "field": "arrivals_thousands", "type": "quantitative",
+          "title": "Arrivals (thousands)",
+          "scale": {
+            "range": ["#f5f0eb", "#e8c9a0", "#D85A30", "#8B1A00"],
+            "domainMin": 0
+          },
+          "legend": { "orient": "right", "titleFontSize": 11, "labelFontSize": 10, "gradientLength": 200 }
+        },
+        "tooltip": [
+          { "field": "month",              "title": "Month" },
+          { "field": "year",               "title": "Year" },
+          { "field": "arrivals_thousands", "title": "Arrivals (thousands)", "format": ",.0f" }
+        ]
+      }
     },
-    "y": {
-      "field": "month", "type": "ordinal",
-      "title": null,
-      "sort": ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
-      "axis": { "labelFontSize": 11 }
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 9.5,
+        "fontWeight": "bold",
+        "color": "white",
+        "align": "center",
+        "baseline": "middle"
+      },
+      "transform": [
+        {
+          "filter": "(datum.month === 'Dec' || datum.month === 'Mar') && datum.year === '2024'"
+        }
+      ],
+      "encoding": {
+        "x": { "field": "year", "type": "ordinal" },
+        "y": {
+          "field": "month", "type": "ordinal",
+          "sort": ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+        },
+        "text": {
+          "condition": [
+            { "test": "datum.month === 'Dec'", "value": "Peak" },
+            { "test": "datum.month === 'Mar'", "value": "Peak" }
+          ],
+          "value": ""
+        }
+      }
     },
-    "color": {
-      "field": "arrivals_thousands", "type": "quantitative",
-      "title": "Arrivals (thousands)",
-      "scale": { "scheme": "yelloworangered", "domainMin": 0 },
-      "legend": { "orient": "right", "titleFontSize": 11, "labelFontSize": 10, "gradientLength": 200 }
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 9.5,
+        "fontWeight": "bold",
+        "color": "#333",
+        "align": "center",
+        "baseline": "middle"
+      },
+      "transform": [
+        { "filter": "datum.month === 'Jun' && datum.year === '2022'" }
+      ],
+      "encoding": {
+        "x": { "field": "year", "type": "ordinal" },
+        "y": {
+          "field": "month", "type": "ordinal",
+          "sort": ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+        },
+        "text": { "value": "Low" }
+      }
     },
-    "tooltip": [
-      { "field": "month",             "title": "Month" },
-      { "field": "year",              "title": "Year" },
-      { "field": "arrivals_thousands","title": "Arrivals (thousands)", "format": ",.0f" }
-    ]
-  },
+    {
+      "data": {
+        "values": [
+          { "year": "2022", "month": "Jan", "label": "Borders reopened\nFeb 2022" }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 9,
+        "fontStyle": "italic",
+        "color": "#333",
+        "align": "left",
+        "dx": 8,
+        "dy": -6
+      },
+      "encoding": {
+        "x": { "field": "year", "type": "ordinal" },
+        "y": {
+          "field": "month", "type": "ordinal",
+          "sort": ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+        },
+        "text": { "field": "label" }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          { "year": "2024", "month": "May", "label": "2024 intensity\nmatches 2019" }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 9,
+        "fontStyle": "italic",
+        "color": "#333",
+        "align": "left",
+        "dx": 8
+      },
+      "encoding": {
+        "x": { "field": "year", "type": "ordinal" },
+        "y": {
+          "field": "month", "type": "ordinal",
+          "sort": ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+        },
+        "text": { "field": "label" }
+      }
+    }
+  ],
   "config": {
     "view": { "stroke": null, "step": 18 },
     "axis": { "domain": false, "ticks": false }
