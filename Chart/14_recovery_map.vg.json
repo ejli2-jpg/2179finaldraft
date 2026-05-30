@@ -30,7 +30,7 @@
       ],
       "mark": { "type": "geoshape", "stroke": "#ffffff", "strokeWidth": 1.5 },
       "encoding": {
-        "color": {  
+        "color": {
           "field": "recovery_pct",
           "type": "quantitative",
           "title": "% of 2019 arrivals",
@@ -68,6 +68,102 @@
           "formatType": "number"
         }
       }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 133.5, "lat": -21.5,
+            "label": "Most lagging —",
+            "sublabel": "still 18% below 2019"
+          },
+          {
+            "lon": 146.0, "lat": -32.5,
+            "label": "Strongest recovery —",
+            "sublabel": "8% above 2019"
+          }
+        ]
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 9,
+            "fontWeight": "bold",
+            "fontStyle": "italic",
+            "color": "#8B1A00",
+            "align": "center",
+            "baseline": "bottom",
+            "dy": -4
+          },
+          "transform": [
+            { "filter": "datum.label === 'Most lagging —'" }
+          ],
+          "encoding": {
+            "longitude": { "field": "lon", "type": "quantitative" },
+            "latitude":  { "field": "lat", "type": "quantitative" },
+            "text":      { "field": "label" }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 9,
+            "fontStyle": "italic",
+            "color": "#8B1A00",
+            "align": "center",
+            "baseline": "top",
+            "dy": 4
+          },
+          "transform": [
+            { "filter": "datum.label === 'Most lagging —'" }
+          ],
+          "encoding": {
+            "longitude": { "field": "lon", "type": "quantitative" },
+            "latitude":  { "field": "lat", "type": "quantitative" },
+            "text":      { "field": "sublabel" }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 9,
+            "fontWeight": "bold",
+            "fontStyle": "italic",
+            "color": "#1D5C2E",
+            "align": "center",
+            "baseline": "bottom",
+            "dy": -4
+          },
+          "transform": [
+            { "filter": "datum.label === 'Strongest recovery —'" }
+          ],
+          "encoding": {
+            "longitude": { "field": "lon", "type": "quantitative" },
+            "latitude":  { "field": "lat", "type": "quantitative" },
+            "text":      { "field": "label" }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 9,
+            "fontStyle": "italic",
+            "color": "#1D5C2E",
+            "align": "center",
+            "baseline": "top",
+            "dy": 4
+          },
+          "transform": [
+            { "filter": "datum.label === 'Strongest recovery —'" }
+          ],
+          "encoding": {
+            "longitude": { "field": "lon", "type": "quantitative" },
+            "latitude":  { "field": "lat", "type": "quantitative" },
+            "text":      { "field": "sublabel" }
+          }
+        }
+      ]
     }
   ],
   "config": { "view": { "stroke": null }, "background": "#f0f7fb" }
