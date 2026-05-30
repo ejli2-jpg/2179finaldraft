@@ -15,7 +15,7 @@
         "x": {
           "field": "purpose", "type": "nominal",
           "title": "Purpose of travel",
-          "sort": ["-y"],
+          "sort": { "field": "spend_million_aud", "op": "sum", "order": "descending" },
           "axis": { "labelFontSize": 12, "labelAngle": -15 }
         },
         "y": {
@@ -34,75 +34,36 @@
           "legend": { "orient": "top-right", "titleFontSize": 11, "labelFontSize": 11 }
         },
         "tooltip": [
-          { "field": "purpose",          "title": "Purpose" },
-          { "field": "visitor_type",     "title": "Visitor type" },
-          { "field": "spend_million_aud","title": "Spend ($M AUD)", "format": ",.0f" }
+          { "field": "purpose",           "title": "Purpose" },
+          { "field": "visitor_type",      "title": "Visitor type" },
+          { "field": "spend_million_aud", "title": "Spend ($M AUD)", "format": ",.0f" }
         ]
       }
     },
     {
       "data": {
         "values": [
-          { "purpose": "Holiday", "y": 53000, "label": "Largest category\n~$53B total" },
-          { "purpose": "Education", "y": 15200, "label": "~80% international spend" }
+          { "purpose": "Holiday",   "spend_million_aud": 53000, "label": "Largest category — ~$53B total" },
+          { "purpose": "Education", "spend_million_aud": 15200, "label": "~80% from international visitors" }
         ]
       },
-      "layer": [
-        {
-          "mark": {
-            "type": "text",
-            "align": "center",
-            "baseline": "bottom",
-            "dy": -6,
-            "fontSize": 10,
-            "fontWeight": "600",
-            "color": "#333"
-          },
-          "encoding": {
-            "x": { "field": "purpose", "type": "nominal", "sort": ["-y"] },
-            "y": { "field": "y", "type": "quantitative" },
-            "text": { "field": "label" }
-          }
-        }
-      ]
-    },
-    {
-      "data": {
-        "values": [
-          { "x": "Education", "y": 7500, "label": "High-value:\nintl. spend per\nvisitor far exceeds\nother categories" }
-        ]
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "dy": -6,
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "color": "#333"
       },
-      "layer": [
-        {
-          "mark": {
-            "type": "text",
-            "align": "left",
-            "dx": 55,
-            "fontSize": 9.5,
-            "fontStyle": "italic",
-            "color": "#185FA5"
-          },
-          "encoding": {
-            "x": { "field": "x", "type": "nominal", "sort": ["-y"] },
-            "y": { "field": "y", "type": "quantitative" },
-            "text": { "field": "label" }
-          }
+      "encoding": {
+        "x": {
+          "field": "purpose", "type": "nominal",
+          "sort": { "field": "spend_million_aud", "op": "sum", "order": "descending" }
         },
-        {
-          "mark": {
-            "type": "rule",
-            "color": "#185FA5",
-            "strokeDash": [3, 2],
-            "strokeWidth": 1
-          },
-          "encoding": {
-            "x": { "field": "x", "type": "nominal", "sort": ["-y"] },
-            "y": { "value": 60 },
-            "y2": { "value": 160 },
-            "x2": { "value": 460 }
-          }
-        }
-      ]
+        "y": { "field": "spend_million_aud", "type": "quantitative", "stack": false },
+        "text": { "field": "label" }
+      }
     }
   ],
   "config": { "view": { "stroke": null }, "axis": { "domain": false, "ticks": false } }
