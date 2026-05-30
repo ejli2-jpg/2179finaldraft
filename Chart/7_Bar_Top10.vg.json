@@ -8,7 +8,7 @@
     "subtitleFontSize": 11,
     "subtitleColor": "#666"
   },
-  "width": 600,
+  "width": 580,
   "height": 500,
   "data": {
     "url": "Data/top10_countries.csv"
