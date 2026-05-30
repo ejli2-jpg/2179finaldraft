@@ -24,7 +24,6 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
-    /* ── HERO ─────────────────────────────────────── */
     .hero {
       background: #0f1e2e;
       padding: 60px 48px 52px;
@@ -104,7 +103,6 @@
       line-height: 1.45;
     }
 
-    /* ── BAND ─────────────────────────────────────── */
     .band {
       background: #0f1e2e;
       padding: 20px 48px;
@@ -147,7 +145,6 @@
       max-width: 820px;
     }
 
-    /* ── SECTION ──────────────────────────────────── */
     .section {
       background: #ffffff;
       padding: 40px 32px 32px;
@@ -177,7 +174,6 @@
       padding-left: 14px;
     }
 
-    /* ── BODY COPY — same font, two sizes for hierarchy ── */
     .sec-body {
       font-family: 'DM Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
       font-size: 16px;
@@ -188,7 +184,6 @@
       margin-bottom: 28px;
     }
 
-    /* Chart intro — directs reader to chart below */
     .chart-intro {
       font-family: 'DM Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
       font-size: 14px;
@@ -200,7 +195,6 @@
       margin-bottom: 16px;
     }
 
-    /* Chart outro — interprets chart above */
     .chart-outro {
       font-family: 'DM Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
       font-size: 14px;
@@ -214,7 +208,6 @@
       border-left: 2px solid #d8d4cc;
     }
 
-    /* Connector — italic narrative bridge */
     .connector {
       font-family: 'DM Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
       font-size: 14px;
@@ -227,7 +220,6 @@
       padding-top: 20px;
     }
 
-    /* ── CHART LAYOUT ─────────────────────────────── */
     .chart-full {
       background: transparent;
       margin-bottom: 8px;
@@ -273,7 +265,6 @@
       padding: 0;
     }
 
-    /* ── INSIGHT BOX ──────────────────────────────── */
     .insight-box {
       background: #fff8f5;
       border-left: 3px solid #D85A30;
@@ -302,7 +293,6 @@
       line-height: 1.7;
     }
 
-    /* ── WORLD MAP + SIDEBAR ──────────────────────── */
     .map-with-sidebar {
       display: flex;
       flex-direction: row;
@@ -342,7 +332,6 @@
       margin: 0;
     }
 
-    /* ── FOOTER ───────────────────────────────────── */
     .footer {
       background: #ffffff;
       border-top: 1px solid #e8e6e0;
@@ -360,7 +349,6 @@
       letter-spacing: 0.1px;
     }
 
-    /* ── RESPONSIVE ───────────────────────────────── */
     @media (max-width: 900px) {
       .stats-grid, .chart-grid-2, .map-with-sidebar { grid-template-columns: 1fr; }
       .hero h1 { font-size: 30px; }
@@ -699,30 +687,30 @@
       their stay. Together they reveal the full breadth of economic activity that tourism generates.
     </p>
 
-    <div class="chart-grid-2">
-      <div class="chart-block">
+    <div class="map-with-sidebar">
+      <div class="map-main">
         <div class="chart-body">
           <div id="stacked_bar_purpose"></div>
           <script>vegaEmbed('#stacked_bar_purpose', 'Chart/10_stacked_bar_purpose.vg.json').catch(console.error);</script>
         </div>
       </div>
-
-    </div>
-    <p class="chart-outro">
-      Holiday and leisure spending dominates both domestic and international totals, but education stands
-      out as a disproportionately high-value category for international visitors. The activity hierarchy
-      shows that dining, sightseeing, and shopping are near-universal behaviours among international
-      visitors, making the hospitality and retail sectors deeply intertwined with tourism outcomes.
-      Nature-based and cultural activities feature prominently too, underlining the role that Australia's
-      natural landscape and heritage play in driving visitor interest.
-    </p>
-
-    <div class="insight-box">
-      <span class="insight-label">Key insight</span>
-      <p>Education tourism generates some of the highest visitor spending in Australia despite representing
-      a relatively small share of total arrivals. International students stay longer and spend substantially
-      more than leisure tourists, making education one of Australia's most valuable tourism sectors on a
-      per-visitor basis.</p>
+      <div class="map-sidebar">
+        <p class="chart-outro">
+          Holiday and leisure spending dominates both domestic and international totals, but education stands
+          out as a disproportionately high-value category for international visitors. The activity hierarchy
+          shows that dining, sightseeing, and shopping are near-universal behaviours among international
+          visitors, making the hospitality and retail sectors deeply intertwined with tourism outcomes.
+          Nature-based and cultural activities feature prominently too, underlining the role that Australia's
+          natural landscape and heritage play in driving visitor interest.
+        </p>
+        <div class="insight-box" style="max-width:none; margin:16px 0 0;">
+          <span class="insight-label">Key insight</span>
+          <p>Education tourism generates some of the highest visitor spending in Australia despite representing
+          a relatively small share of total arrivals. International students stay longer and spend substantially
+          more than leisure tourists, making education one of Australia's most valuable tourism sectors on a
+          per-visitor basis.</p>
+        </div>
+      </div>
     </div>
     <p class="chart-intro">
       The bar chart below ranks the specific activities that international visitors participate in most
