@@ -70,7 +70,7 @@
       }
     },
     {
-      "data": { "values": [{ "x": 500, "label": "500K threshold — only 5 markets exceed this" }] },
+      "data": { "values": [{ "x": 500, "label": "500K threshold — only 4 markets exceed this" }] },
       "mark": {
         "type": "text",
         "align": "left",
@@ -78,7 +78,7 @@
         "dy": -120,
         "fontSize": 10,
         "fontStyle": "italic",
-        "color": "#999"
+        "color": "#555"
       },
       "encoding": {
         "x": { "field": "x", "type": "quantitative" },
