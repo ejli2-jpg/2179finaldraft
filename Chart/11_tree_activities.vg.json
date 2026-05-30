@@ -102,44 +102,30 @@
       }
     },
     {
+      "type": "rect",
+      "encode": {
+        "enter": {
+          "x":            { "value": 10 },
+          "y":            { "value": 270 },
+          "width":        { "value": 210 },
+          "height":       { "value": 140 },
+          "fill":         { "value": "#f9f8f6" },
+          "stroke":       { "value": "#e0ddd8" },
+          "strokeWidth":  { "value": 1 },
+          "cornerRadius": { "value": 4 }
+        }
+      }
+    },
+    {
       "type": "text",
       "encode": {
         "enter": {
-          "x":        { "value": 420 },
-          "y":        { "value": 30 },
-          "text":     { "value": "★ Top activity" },
-          "fontSize": { "value": 10 },
+          "x":          { "value": 20 },
+          "y":          { "value": 288 },
+          "text":       { "value": "Key insights" },
+          "fontSize":   { "value": 10 },
           "fontWeight": { "value": "bold" },
-          "fill":     { "value": "#D85A30" },
-          "align":    { "value": "left" }
-        }
-      }
-    },
-    {
-      "type": "text",
-      "encode": {
-        "enter": {
-          "x":        { "value": 420 },
-          "y":        { "value": 44 },
-          "text":     { "value": "Restaurants: 71% of all" },
-          "fontSize": { "value": 9.5 },
-          "fontStyle": { "value": "italic" },
-          "fill":     { "value": "#666" },
-          "align":    { "value": "left" }
-        }
-      }
-    },
-    {
-      "type": "text",
-      "encode": {
-        "enter": {
-          "x":        { "value": 420 },
-          "y":        { "value": 57 },
-          "text":     { "value": "international visitors dine out" },
-          "fontSize": { "value": 9.5 },
-          "fontStyle": { "value": "italic" },
-          "fill":     { "value": "#666" },
-          "align":    { "value": "left" }
+          "fill":       { "value": "#333" }
         }
       }
     },
@@ -147,13 +133,23 @@
       "type": "rule",
       "encode": {
         "enter": {
-          "x":            { "value": 415 },
-          "y":            { "value": 30 },
-          "x2":           { "value": 415 },
-          "y2":           { "value": 57 },
-          "stroke":       { "value": "#D85A30" },
-          "strokeWidth":  { "value": 1 },
-          "strokeDash":   { "value": [3, 2] }
+          "x":           { "value": 20 },
+          "x2":          { "value": 210 },
+          "y":           { "value": 296 },
+          "stroke":      { "value": "#e0ddd8" },
+          "strokeWidth": { "value": 1 }
+        }
+      }
+    },
+    {
+      "type": "symbol",
+      "encode": {
+        "enter": {
+          "x":    { "value": 28 },
+          "y":    { "value": 312 },
+          "size": { "value": 60 },
+          "fill": { "value": "#D85A30" },
+          "shape": { "value": "circle" }
         }
       }
     },
@@ -161,13 +157,13 @@
       "type": "text",
       "encode": {
         "enter": {
-          "x":        { "value": 420 },
-          "y":        { "value": 340 },
-          "text":     { "value": "★ Strongest nature draw" },
-          "fontSize": { "value": 10 },
+          "x":          { "value": 40 },
+          "y":          { "value": 308 },
+          "text":       { "value": "Restaurants: 71% participation" },
+          "fontSize":   { "value": 9.5 },
           "fontWeight": { "value": "bold" },
-          "fill":     { "value": "#1D9E75" },
-          "align":    { "value": "left" }
+          "fill":       { "value": "#D85A30" },
+          "baseline":   { "value": "top" }
         }
       }
     },
@@ -175,13 +171,25 @@
       "type": "text",
       "encode": {
         "enter": {
-          "x":        { "value": 420 },
-          "y":        { "value": 354 },
-          "text":     { "value": "Beach visits: 42% — Australia's" },
-          "fontSize": { "value": 9.5 },
+          "x":        { "value": 40 },
+          "y":        { "value": 322 },
+          "text":     { "value": "Most common activity overall" },
+          "fontSize": { "value": 9 },
           "fontStyle": { "value": "italic" },
           "fill":     { "value": "#666" },
-          "align":    { "value": "left" }
+          "baseline": { "value": "top" }
+        }
+      }
+    },
+    {
+      "type": "symbol",
+      "encode": {
+        "enter": {
+          "x":    { "value": 28 },
+          "y":    { "value": 350 },
+          "size": { "value": 60 },
+          "fill": { "value": "#1D9E75" },
+          "shape": { "value": "circle" }
         }
       }
     },
@@ -189,27 +197,67 @@
       "type": "text",
       "encode": {
         "enter": {
-          "x":        { "value": 420 },
-          "y":        { "value": 367 },
-          "text":     { "value": "natural brand drives tourism" },
-          "fontSize": { "value": 9.5 },
-          "fontStyle": { "value": "italic" },
-          "fill":     { "value": "#666" },
-          "align":    { "value": "left" }
+          "x":          { "value": 40 },
+          "y":          { "value": 346 },
+          "text":       { "value": "Beach: 42% — top nature activity" },
+          "fontSize":   { "value": 9.5 },
+          "fontWeight": { "value": "bold" },
+          "fill":       { "value": "#1D9E75" },
+          "baseline":   { "value": "top" }
         }
       }
     },
     {
-      "type": "rule",
+      "type": "text",
       "encode": {
         "enter": {
-          "x":            { "value": 415 },
-          "y":            { "value": 340 },
-          "x2":           { "value": 415 },
-          "y2":           { "value": 367 },
-          "stroke":       { "value": "#1D9E75" },
-          "strokeWidth":  { "value": 1 },
-          "strokeDash":   { "value": [3, 2] }
+          "x":        { "value": 40 },
+          "y":        { "value": 360 },
+          "text":     { "value": "Australia's natural brand drives visits" },
+          "fontSize": { "value": 9 },
+          "fontStyle": { "value": "italic" },
+          "fill":     { "value": "#666" },
+          "baseline": { "value": "top" }
+        }
+      }
+    },
+    {
+      "type": "symbol",
+      "encode": {
+        "enter": {
+          "x":    { "value": 28 },
+          "y":    { "value": 388 },
+          "size": { "value": 60 },
+          "fill": { "value": "#185FA5" },
+          "shape": { "value": "circle" }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x":          { "value": 40 },
+          "y":          { "value": 384 },
+          "text":       { "value": "Shopping malls: 65% participation" },
+          "fontSize":   { "value": 9.5 },
+          "fontWeight": { "value": "bold" },
+          "fill":       { "value": "#185FA5" },
+          "baseline":   { "value": "top" }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x":        { "value": 40 },
+          "y":        { "value": 398 },
+          "text":     { "value": "Retail a major driver of visitor spend" },
+          "fontSize": { "value": 9 },
+          "fontStyle": { "value": "italic" },
+          "fill":     { "value": "#666" },
+          "baseline": { "value": "top" }
         }
       }
     }
