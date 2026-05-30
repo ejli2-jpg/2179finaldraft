@@ -9,7 +9,7 @@
     "subtitleColor": "#666"
   },
   "width": 580,
-  "height": 500,
+  "height": 520,
   "data": {
     "url": "Data/top10_countries.csv"
   },
