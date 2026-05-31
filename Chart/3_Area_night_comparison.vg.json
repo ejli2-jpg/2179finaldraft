@@ -45,7 +45,7 @@
           "title": "Visitor type",
           "scale": {
             "domain": ["Domestic", "International"],
-            "range": ["#D85A30", "#0d3d6e"]
+            "range": ["#D85A30", "#4a90c4"]
           },
           "legend": null
         },
